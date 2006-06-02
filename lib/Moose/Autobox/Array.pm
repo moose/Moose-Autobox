@@ -3,8 +3,11 @@ use Moose::Role 'with';
 
 our $VERSION = '0.01';
 
-with 'Moose::Autobox::Ref';
+with 'Moose::Autobox::Ref',
+     'Moose::Autobox::List';
 
+## List interface
+ 
 sub length {
     my ($array) = @_;
     CORE::scalar @$array;
@@ -27,18 +30,20 @@ sub join {
 
 sub reverse { 
     my ($array) = @_;
-    [ CORE::reverse @{$array} ];
+    [ CORE::reverse @$array ];
 }
 
 sub sort { 
     my ($array, $sub) = @_;     
     $sub ||= sub { $a cmp $b }; 
     [ CORE::sort { $sub->($a, $b) } @$array ]; 
-}
+}     
+
+## Array Interface
 
 sub pop { 
     my ($array) = @_;    
-    CORE::pop @{$array}; 
+    CORE::pop @$array; 
 }
 
 sub push { 
@@ -49,7 +54,7 @@ sub push {
 
 sub unshift { 
     my ($array, @rest) = @_;    
-    CORE::unshift @{$array}, @rest; 
+    CORE::unshift @$array, @rest; 
     $array; 
 }
 sub exists {
@@ -65,6 +70,23 @@ sub delete {
 sub shift { 
     my ($array) = @_;    
     CORE::shift @$array; 
+}
+
+## 
+
+sub keys { 
+    my ($array) = @_;    
+    [ 0 .. $#{$array} ];
+}
+
+sub values { 
+    my ($array) = @_;    
+    [ @$array ];
+}
+
+sub kv {
+    my ($array) = @_;   
+    [ CORE::map { [ $_, $array->[$_] ] } $array->keys ];
 }
 
 1;
