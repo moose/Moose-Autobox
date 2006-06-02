@@ -37,7 +37,46 @@ sub sort {
     my ($array, $sub) = @_;     
     $sub ||= sub { $a cmp $b }; 
     [ CORE::sort { $sub->($a, $b) } @$array ]; 
-}     
+}    
+
+# ...
+
+sub reduce {
+    my ($array, $func) = @_;
+    my @a = @$array;
+    my $acc = CORE::shift @a;
+    $acc = $func->($acc, $_) foreach @a;
+    return $acc;
+}
+
+sub zip {
+    my ($array, $other) = @_;
+    [ 
+        CORE::map { 
+            [ $array->[$_], $other->[$_] ]        
+        } 0 .. $#{(
+            CORE::scalar @{$array} < CORE::scalar @{$other} 
+                ? $other : $array
+        )}
+    ];
+} 
+
+## 
+
+sub keys { 
+    my ($array) = @_;    
+    [ 0 .. $#{$array} ];
+}
+
+sub values { 
+    my ($array) = @_;    
+    [ @$array ];
+}
+
+sub kv {
+    my ($array) = @_;   
+    [ CORE::map { [ $_, $array->[$_] ] } (0 .. $#{$array}) ];
+}
 
 ## Array Interface
 
@@ -72,21 +111,5 @@ sub shift {
     CORE::shift @$array; 
 }
 
-## 
-
-sub keys { 
-    my ($array) = @_;    
-    [ 0 .. $#{$array} ];
-}
-
-sub values { 
-    my ($array) = @_;    
-    [ @$array ];
-}
-
-sub kv {
-    my ($array) = @_;   
-    [ CORE::map { [ $_, $array->[$_] ] } $array->keys ];
-}
 
 1;

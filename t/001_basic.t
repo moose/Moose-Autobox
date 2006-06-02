@@ -125,12 +125,47 @@ is_deeply(
 [ 35, 30, 25, 20, 15, 10 ], 
 '... got the correct chained value');
 
+is_deeply(
+$a->keys, 
+[ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ],
+'... the keys');
+
+is_deeply(
+$a->values, 
+[ 15, 20, 30, 10, 2, 6, 78, 101, 2, 10, 15, 20, 30 ], 
+'... the values');
+
+is_deeply(
+$a->kv, 
+[ [0, 15], [1, 20], [2, 30], [3, 10], [4, 2], [5, 6], [6, 78], 
+  [7, 101], [8, 2], [9, 10], [10, 15], [11, 20], [12, 30] ], 
+'... [ k, v ]');
+
+is([1, 2, 3, 4, 5]->reduce(sub { $_[0] + $_[1] }), 15, '... got the right reduction');
+
+is_deeply(
+    [1, 2, 3, 4, 5]->zip([ 5, 4, 3, 2, 1 ]), 
+    [ [1, 5], [2, 4], [3, 3], [4, 2], [5, 1] ],
+    '... got the right zip');
+
+
 # Hash
 
 my $h = { one => 1, two => 2, three => 3 };
 
 ok($h->defined, '... got the right defined value');
 
+is_deeply(
+$h->keys->sort, 
+[ qw/one three two/ ],
+'... the keys');
 
+is_deeply(
+$h->values->sort, 
+[ 1, 2, 3 ],
+'... the values');
+
+ok($h->exists('two'), '... exists works');
+ok(!$h->exists('five'), '... !exists works');
 
 

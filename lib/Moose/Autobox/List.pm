@@ -6,6 +6,14 @@ our $VERSION = '0.01';
 
 with 'Moose::Autobox::Value';
 
-requires qw/length grep map join reverse sort/;
+requires qw/
+    length 
+    join     
+    grep map sort
+    reverse
+    reduce
+    zip
+/;
+
 
 1;
