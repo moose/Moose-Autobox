@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 7;
+use Test::More tests => 8;
 use Test::Exception;
 
 BEGIN {
@@ -11,7 +11,7 @@ BEGIN {
 }
 
 {
-    package Bytes;
+    package Units::Bytes;
     use Moose::Role;
     use autobox;
     
@@ -34,7 +34,11 @@ BEGIN {
 {
     package SCALAR;
     use Moose;
-    with 'Bytes';
+    with 'Units::Bytes';
+}
+
+sub testing_bytes {
+    ::dies_ok { 10->bytes } '... cannot do the autoboxing lexically';
 }
 
 {
@@ -45,6 +49,7 @@ BEGIN {
     is(2->megabytes, 2097152,       '... got 2 megabytes');
     is(1->gigabyte,  1073741824,    '... got 1 gigabyte');
     is(2->terabytes, 2199023255552, '... got 2 terabyte');
+    testing_bytes;
 }
 
 dies_ok { 5->bytes } '... no longer got 5 bytes';

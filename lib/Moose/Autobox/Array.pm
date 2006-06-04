@@ -25,7 +25,8 @@ sub map {
 }
 
 sub join { 
-    my ($array, $sep) = @_;     
+    my ($array, $sep) = @_;    
+    $sep ||= ''; 
     CORE::join $sep, @$array; 
 }
 
@@ -75,7 +76,7 @@ sub values {
 
 sub kv {
     my ($array) = @_;   
-    [ CORE::map { [ $_, $array->[$_] ] } (0 .. $#{$array}) ];
+    $array->keys->map(sub { [ $_, $array->[$_] ] });
 }
 
 ## Array Interface
