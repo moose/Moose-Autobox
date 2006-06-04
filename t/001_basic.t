@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Test::More no_plan => 1;
+use Test::More tests => 44;
 
 BEGIN {
     use_ok('Moose::Autobox');
@@ -44,12 +44,12 @@ is_deeply(
 ok((sub { 1 })->disjoin(sub { 0 })->(), '... disjoins properly');
 ok(!(sub { 1 })->conjoin(sub { 0 })->(), '... conjoins properly');
 
-#my $compose = (sub { 1, @_ })->compose(sub { 2, @_ });
+my $compose = (sub { @_, 1 })->compose(sub { @_, 2 });
 
-#is_deeply(
-#[ $compose->() ],
-#[ 1, 2 ],
-#'... got the right return value for compose');
+is_deeply(
+[ $compose->() ],
+[ 1, 2 ],
+'... got the right return value for compose');
 
     
 # ARRAY    

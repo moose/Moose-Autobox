@@ -4,7 +4,7 @@ package Moose::Autobox;
 use strict;
 use warnings;
 
-use Moose        ();
+use Moose        qw(confess);
 use Scalar::Util ();
 
 our $VERSION = '0.01';
@@ -27,6 +27,7 @@ package CODE;
 use Moose;
 with 'Moose::Autobox::Code';    
     |;
+    confess 'Could not create autobox packages because - ' . $@ if $@;
 }               
 
 1;

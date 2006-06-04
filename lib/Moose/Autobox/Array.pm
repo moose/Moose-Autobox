@@ -1,5 +1,6 @@
 package Moose::Autobox::Array;
 use Moose::Role 'with';
+use autobox;
 
 our $VERSION = '0.01';
 
@@ -43,23 +44,22 @@ sub sort {
 
 sub reduce {
     my ($array, $func) = @_;
-    my @a = @$array;
-    my $acc = CORE::shift @a;
-    $acc = $func->($acc, $_) foreach @a;
+    my $a = $array->values;
+    my $acc = $a->shift;
+    $a->map(sub { $acc = $func->($acc, $_) });
     return $acc;
 }
 
 sub zip {
     my ($array, $other) = @_;
-    [ 
-        CORE::map { 
-            [ $array->[$_], $other->[$_] ]        
-        } 0 .. $#{(
-            CORE::scalar @{$array} < CORE::scalar @{$other} 
-                ? $other : $array
-        )}
-    ];
-} 
+    ($array->length < $other->length 
+        ? $other 
+        : $array)
+            ->keys
+            ->map(sub {
+                [ $array->[$_], $other->[$_] ]
+            });
+}
 
 ## 
 
@@ -110,6 +110,5 @@ sub shift {
     my ($array) = @_;    
     CORE::shift @$array; 
 }
-
 
 1;
