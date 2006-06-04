@@ -42,26 +42,27 @@ Moose::Autobox - autoboxed for her pleasure
 
 =head1 SYNOPOSIS
 
+  use Moose::Autobox;
+  use autobox;
+    
+  print "Squares: " . [ 1 .. 10 ]->map(sub { $_ * $_ })->join(', ');
+
 =head1 DESCRIPTION
 
-  Any
+=head1 ROLES
+
   Item 
-      Bool
       Undef
       Defined
           Value
-              Num
-                Int
-              Str
+              Scalar*                
           Ref
-              ScalarRef
-              ArrayRef
-              HashRef
-              CodeRef
-              RegexpRef
-              Object	
-                  Role
-  
+              List
+                  Array*
+              Hash*
+              Code*
+
+  * indicates actual autoboxed types
 
 =head1 BUGS
 
@@ -82,7 +83,4 @@ L<http://www.iinteractive.com>
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
-
 =cut
-
-
