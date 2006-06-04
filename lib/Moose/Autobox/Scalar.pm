@@ -3,7 +3,6 @@ use Moose::Role 'with';
 
 our $VERSION = '0.01';
 
-with 'Moose::Autobox::Value', 
-     'Moose::Autobox::Ref';
+with 'Moose::Autobox::Value';
      
 1;

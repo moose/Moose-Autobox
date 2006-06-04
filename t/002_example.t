@@ -3,14 +3,13 @@
 use strict;
 use warnings;
 
-use Test::More tests => 19;
+use Test::More tests => 18;
 
 BEGIN {
     use_ok('Moose::Autobox');
 }
 
 ok(SCALAR->does('Moose::Autobox::Scalar'),      '... SCALAR does Moose::Autobox::Scalar');
-  ok(SCALAR->does('Moose::Autobox::Ref'),       '... SCALAR does Moose::Autobox::Ref');
   ok(SCALAR->does('Moose::Autobox::Value'),     '... SCALAR does Moose::Autobox::Value');
     ok(SCALAR->does('Moose::Autobox::Defined'), '... SCALAR does Moose::Autobox::Defined');
       ok(SCALAR->does('Moose::Autobox::Item'),  '... SCALAR does Moose::Autobox::Item');
