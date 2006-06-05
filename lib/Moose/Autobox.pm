@@ -9,8 +9,8 @@ use Scalar::Util ();
 
 our $VERSION = '0.01';
             
-sub import {
-    eval q|
+#sub import {
+#    eval q|
 package SCALAR;
 use Moose;
 with 'Moose::Autobox::Scalar';
@@ -26,9 +26,9 @@ with 'Moose::Autobox::Hash';
 package CODE;
 use Moose;
 with 'Moose::Autobox::Code';    
-    |;
-    confess 'Could not create autobox packages because - ' . $@ if $@;
-}               
+#    |;
+#    confess 'Could not create autobox packages because - ' . $@ if $@;
+#}               
 
 1;
 

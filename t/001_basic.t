@@ -167,5 +167,3 @@ $h->values->sort,
 
 ok($h->exists('two'), '... exists works');
 ok(!$h->exists('five'), '... !exists works');
-
-

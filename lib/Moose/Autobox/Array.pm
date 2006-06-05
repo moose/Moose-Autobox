@@ -6,8 +6,45 @@ our $VERSION = '0.01';
 
 with 'Moose::Autobox::Ref',
      'Moose::Autobox::List';
+    
+## Array Interface
 
-## List interface
+sub pop { 
+    my ($array) = @_;    
+    CORE::pop @$array; 
+}
+
+sub push { 
+    my ($array, @rest) = @_;
+    CORE::push @$array, @rest;  
+    $array; 
+}
+
+sub unshift { 
+    my ($array, @rest) = @_;    
+    CORE::unshift @$array, @rest; 
+    $array; 
+}
+
+sub delete { 
+    my ($array, $index) = @_;    
+    CORE::delete $array->[$index];
+}
+
+sub shift { 
+    my ($array) = @_;    
+    CORE::shift @$array; 
+}     
+
+# NOTE: 
+# sprintf args need to be reversed, 
+# because the invocant is the array
+sub sprintf { CORE::sprintf $_[1], @{$_[0]} }
+
+## ::List interface implementation
+
+sub head { $_[0]->[0] }
+sub tail { [ @{$_[0]}[ 1 .. $#{$_[0]} ] ] }
  
 sub length {
     my ($array) = @_;
@@ -41,28 +78,16 @@ sub sort {
     [ CORE::sort { $sub->($a, $b) } @$array ]; 
 }    
 
-# ...
+# ::Value requirement
 
-sub reduce {
-    my ($array, $func) = @_;
-    my $a = $array->values;
-    my $acc = $a->shift;
-    $a->map(sub { $acc = $func->($acc, $_) });
-    return $acc;
+sub print { CORE::print @{$_[0]} }
+
+## ::Indexed implementation
+
+sub exists {
+    my ($array, $index) = @_;    
+    CORE::exists $array->[$index];    
 }
-
-sub zip {
-    my ($array, $other) = @_;
-    ($array->length < $other->length 
-        ? $other 
-        : $array)
-            ->keys
-            ->map(sub {
-                [ $array->[$_], $other->[$_] ]
-            });
-}
-
-## 
 
 sub keys { 
     my ($array) = @_;    
@@ -77,39 +102,6 @@ sub values {
 sub kv {
     my ($array) = @_;   
     $array->keys->map(sub { [ $_, $array->[$_] ] });
-}
-
-## Array Interface
-
-sub pop { 
-    my ($array) = @_;    
-    CORE::pop @$array; 
-}
-
-sub push { 
-    my ($array, @rest) = @_;
-    CORE::push @$array, @rest;  
-    $array; 
-}
-
-sub unshift { 
-    my ($array, @rest) = @_;    
-    CORE::unshift @$array, @rest; 
-    $array; 
-}
-sub exists {
-    my ($array, $index) = @_;    
-    CORE::exists $array->[$index];    
-}
-
-sub delete { 
-    my ($array, $index) = @_;    
-    CORE::delete $array->[$index];
-}
-
-sub shift { 
-    my ($array) = @_;    
-    CORE::shift @$array; 
 }
 
 1;
