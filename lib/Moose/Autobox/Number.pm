@@ -22,6 +22,14 @@ Moose::Autobox::Number - the Number role
 
 =head1 DESCRIPTION
 
+=head1 METHODS
+
+=over 4
+
+=item B<meta>
+
+=back
+
 =head1 BUGS
 
 All complex software has bugs lurking in it, and this module is no 

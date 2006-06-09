@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 44;
+use Test::More tests => 55;
 
 BEGIN {
     use_ok('Moose::Autobox');
@@ -42,7 +42,10 @@ is_deeply(
 '... got the right return value from the r-curried function');  
 
 ok((sub { 1 })->disjoin(sub { 0 })->(), '... disjoins properly');
+ok((sub { 0 })->disjoin(sub { 1 })->(), '... disjoins properly');
+
 ok(!(sub { 1 })->conjoin(sub { 0 })->(), '... conjoins properly');
+ok(!(sub { 0 })->conjoin(sub { 1 })->(), '... conjoins properly');
 
 my $compose = (sub { @_, 1 })->compose(sub { @_, 2 });
 
@@ -50,8 +53,7 @@ is_deeply(
 [ $compose->() ],
 [ 1, 2 ],
 '... got the right return value for compose');
-
-    
+  
 # ARRAY    
     
 my $a = [ 4, 2, 6, 78, 101, 2, 3 ];
@@ -81,6 +83,7 @@ $a->grep(sub { $_ < 50 }),
 is_deeply($a, [ 4, 2, 6, 78, 101, 2, 3 ], '... original value is unchanged');
 
 is($a->join(', '), '4, 2, 6, 78, 101, 2, 3', '... got the right joined string');
+is($a->join, '4267810123', '... got the right joined string');
 ok($a->exists(0), '... exists works');
 ok(!$a->exists(10), '... exists works');
 
@@ -144,10 +147,27 @@ $a->kv,
 is([1, 2, 3, 4, 5]->reduce(sub { $_[0] + $_[1] }), 15, '... got the right reduction');
 
 is_deeply(
-    [1, 2, 3, 4, 5]->zip([ 5, 4, 3, 2, 1 ]), 
-    [ [1, 5], [2, 4], [3, 3], [4, 2], [5, 1] ],
-    '... got the right zip');
+[1, 2, 3, 4, 5]->zip([ 5, 4, 3, 2, 1 ]), 
+[ [1, 5], [2, 4], [3, 3], [4, 2], [5, 1] ],
+'... got the right zip');
 
+is_deeply(
+[1, 2, 3, 4, 5]->zip([ 6, 5, 4, 3, 2, 1 ]), 
+[ [1, 6], [2, 5], [3, 4], [4, 3], [5, 2], [undef, 1] ],
+'... got the right zip');
+
+is($a->delete(2), 30, '... got the value deleted');
+is_deeply(
+$a, 
+[ 15, 20, undef, 10, 2, 6, 78, 101, 2, 10, 15, 20, 30 ], 
+'... the value is correctly deleted');
+
+$a->put(2, 30);
+
+is_deeply(
+$a, 
+[ 15, 20, 30, 10, 2, 6, 78, 101, 2, 10, 15, 20, 30 ], 
+'... the value is correctly put');
 
 # Hash
 
@@ -165,5 +185,26 @@ $h->values->sort,
 [ 1, 2, 3 ],
 '... the values');
 
+is_deeply(
+$h->kv->sort(sub { $_[0]->[1] <=> $_[1]->[1] }), 
+[ ['one', 1], ['two', 2], ['three', 3] ],
+'... the kvs');
+
 ok($h->exists('two'), '... exists works');
 ok(!$h->exists('five'), '... !exists works');
+
+$h->put('four' => 4);
+is_deeply(
+$h,
+{ one => 1, two => 2, three => 3, four => 4 },
+'... got the value added correctly');
+
+is($h->at('four'), 4, '... got the value at "four"');
+
+$h->delete('four');
+is_deeply(
+$h,
+{ one => 1, two => 2, three => 3 },
+'... got the value deleted correctly');
+
+

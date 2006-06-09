@@ -39,6 +39,32 @@ Moose::Autobox::String - the String role
 
 =head1 DESCRIPTION
 
+=head1 METHODS
+
+=over 4
+
+=item B<meta>
+
+=item B<chomp>
+
+=item B<chop>
+
+=item B<index>
+
+=item B<lc>
+
+=item B<lcfirst>
+
+=item B<length>
+
+=item B<reverse>
+
+=item B<uc>
+
+=item B<ucfirst>
+
+=back
+
 =head1 BUGS
 
 All complex software has bugs lurking in it, and this module is no 

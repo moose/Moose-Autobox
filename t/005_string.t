@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 15;
+use Test::More tests => 16;
 use Test::Exception;
 
 BEGIN {
@@ -38,6 +38,8 @@ is('length'->length, 6, '... got the string length');
 is('Hello World'->index('World'), 6, '... got the correct index');
 
 is('Hello World, Hello'->index('Hello'), 0, '... got the correct index');
+
+is('Hello World, Hello'->index('Hello', 6), 13, '... got the correct index');
 
 #is('Hello World, Hello'->rindex('World'), 13, '... got the correct right index');
 #diag CORE::rindex('Hello World, Hello', 'Hello');

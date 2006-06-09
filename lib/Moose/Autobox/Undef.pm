@@ -24,6 +24,16 @@ Moose::Autobox::Undef - the Undef role
 
 =head1 DESCRIPTION
 
+=head1 METHODS
+
+=over 4
+
+=item B<meta>
+
+=item B<defined>
+
+=back
+
 =head1 BUGS
 
 All complex software has bugs lurking in it, and this module is no 

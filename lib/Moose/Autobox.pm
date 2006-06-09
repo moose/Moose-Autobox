@@ -70,16 +70,21 @@ Moose::Autobox - autoboxed for her pleasure
 =head1 DESCRIPTION
 
 =head1 ROLES
-
-  Item                  |
-      Undef             |
-      Defined           |
-          Scalar*     <-|- String, Number <--+
-          Ref           |                    |-- Value 
-              Array*  <-|- List <------------+
-              Hash*     |
-              Code*     |
-                      
+                                                          
+  +------------------------+-------------------------------+
+  |  Identity              |  Behavioral                   |
+  +------------------------+-------------------------------+
+  |  Item                  |                               |
+  |      Undef             |                               |
+  |      Defined           |                               |
+  |          Scalar*     <-|- String, Number <--+          |
+  |          Ref           |                    |-- Value  |
+  |              Array*  <-|- List <------------+          |
+  |              Hash*     |                               |
+  |              Code*     |                               |
+  |                        |                               |
+  +------------------------+-------------------------------+
+                                                          
   * indicates actual autoboxed types
   
 =head1 NOTES  

@@ -5,10 +5,6 @@ our $VERSION = '0.01';
 
 with 'Moose::Autobox::String',
      'Moose::Autobox::Number';     
-
-# ::Value requirement     
-     
-sub print { CORE::print $_[0] }  
      
 1;
 
@@ -26,6 +22,14 @@ Moose::Autobox::Scalar - the Scalar role
   use autobox;
 
 =head1 DESCRIPTION
+
+=head1 METHODS
+
+=over 4
+
+=item B<meta>
+
+=back
 
 =head1 BUGS
 

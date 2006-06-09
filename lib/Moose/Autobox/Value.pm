@@ -5,8 +5,6 @@ our $VERSION = '0.01';
 
 with 'Moose::Autobox::Defined';
 
-requires 'print';
-
 sub do { 
     my ($self, $block) = @_;
     local $_ = $self;
@@ -33,6 +31,16 @@ Moose::Autobox::Value - the Value role
   10->do(sub { $_ + 15 })->print; # prints 25
 
 =head1 DESCRIPTION
+
+=head1 METHODS
+
+=over 4
+
+=item B<meta>
+
+=item B<do>
+
+=back
 
 =head1 BUGS
 

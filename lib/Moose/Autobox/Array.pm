@@ -47,16 +47,6 @@ sub sprintf { CORE::sprintf $_[1], @{$_[0]} }
 sub head { $_[0]->[0] }
 sub tail { [ @{$_[0]}[ 1 .. $#{$_[0]} ] ] }
  
-sub at {
-    my ($array, $index) = @_;
-    $array->[$index];
-} 
-
-sub put {
-    my ($array, $index, $value) = @_;
-    $array->[$index] = $value;
-}
- 
 sub length {
     my ($array) = @_;
     CORE::scalar @$array;
@@ -89,11 +79,17 @@ sub sort {
     [ CORE::sort { $sub->($a, $b) } @$array ]; 
 }    
 
-# ::Value requirement
-
-sub print { CORE::print @{$_[0]} }
-
 ## ::Indexed implementation
+
+sub at {
+    my ($array, $index) = @_;
+    $array->[$index];
+} 
+
+sub put {
+    my ($array, $index, $value) = @_;
+    $array->[$index] = $value;
+}
 
 sub exists {
     my ($array, $index) = @_;    
@@ -133,6 +129,66 @@ Moose::Autobox::Array - the Array role
   print "Squares: " . [ 1 .. 10 ]->map(sub { $_ * $_ })->join(', ');
 
 =head1 DESCRIPTION
+
+=head1 METHODS
+
+=over 4
+
+=item B<meta>
+
+=item B<pop>
+
+=item B<push>
+
+=item B<shift>
+
+=item B<unshift>
+
+=item B<delete>
+
+=item B<sprintf>
+
+=back
+
+=head2 Indexed
+
+=over 4
+
+=item B<at>
+
+=item B<put>
+
+=item B<exists>
+
+=item B<keys>
+
+=item B<kv>
+
+=item B<values>
+
+=back
+
+=head2 List
+
+=over 4
+
+=item B<head>
+
+=item B<tail>
+
+=item B<join>
+
+=item B<length>
+
+=item B<map>
+
+=item B<grep>
+
+=item B<reverse>
+
+=item B<sort>
+
+=back
 
 =head1 BUGS
 

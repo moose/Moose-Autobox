@@ -29,6 +29,32 @@ Moose::Autobox::Indexed - the Indexed role
 
 =head1 DESCRIPTION
 
+=head1 METHODS
+
+=over 4
+
+=item B<meta>
+
+=back
+
+=head1 REQUIRED METHODS
+
+=over 4
+
+=item B<at>
+
+=item B<put>
+
+=item B<exists>
+
+=item B<keys>
+
+=item B<values>
+
+=item B<kv>
+
+=back
+
 =head1 BUGS
 
 All complex software has bugs lurking in it, and this module is no 

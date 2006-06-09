@@ -6,8 +6,6 @@ our $VERSION = '0.01';
 with 'Moose::Autobox::Ref',
      'Moose::Autobox::Indexed';
 
-
-
 sub delete { 
     my ($hash, $key) = @_;
     CORE::delete $hash->{$key}; 
@@ -63,6 +61,34 @@ Moose::Autobox::Hash - the Hash role
   { one => 1, two => 2 }->keys->join(', ')->print; # prints 'one, two'
 
 =head1 DESCRIPTION
+
+=head1 METHODS
+
+=over 4
+
+=item B<meta>
+
+=item B<delete>
+
+=back
+
+=head2 Indexed
+
+=over 4
+
+=item B<at>
+
+=item B<put>
+
+=item B<exists>
+
+=item B<keys>
+
+=item B<values>
+
+=item B<kv>
+
+=back
 
 =head1 BUGS
 

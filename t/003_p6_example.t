@@ -22,7 +22,7 @@ BEGIN {
     sub terabytes { $_[0] * 1024->gigabytes }
     
     {
-        no warnings; # << squelch the stupid "used only once, maybe typo" warnings
+        no warnings 'once'; # << squelch the stupid "used only once, maybe typo" warnings
         *byte     = \&bytes;
         *kilobyte = \&kilobytes;    
         *megabyte = \&megabytes;    

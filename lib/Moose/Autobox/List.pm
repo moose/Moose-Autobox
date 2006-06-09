@@ -54,6 +54,40 @@ Moose::Autobox::List - the List role
 
 =head1 DESCRIPTION
 
+=head1 METHODS
+
+=over 4
+
+=item B<meta>
+
+=item B<reduce>
+
+=item B<zip>
+
+=back
+
+=head1 REQUIRED METHODS
+
+=over 4
+
+=item B<head>
+
+=item B<tail>
+
+=item B<join>
+
+=item B<length>
+
+=item B<map>
+
+=item B<grep>
+
+=item B<reverse>
+
+=item B<sort>
+
+=back
+
 =head1 BUGS
 
 All complex software has bugs lurking in it, and this module is no 
