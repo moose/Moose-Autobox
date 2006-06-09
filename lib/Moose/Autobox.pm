@@ -4,7 +4,7 @@ package Moose::Autobox;
 use strict;
 use warnings;
 
-use Moose        qw(confess);
+use Carp        qw(confess);
 use Scalar::Util ();
 
 our $VERSION = '0.01';
@@ -12,20 +12,39 @@ our $VERSION = '0.01';
 #sub import {
 #    eval q|
 package SCALAR;
+
+# NOTE:
+# this doesnt make sense, but 
+# I need to prevent Moose from 
+# assiging to @ISA
+use base 'Moose::Autobox';
+
 use Moose;
 with 'Moose::Autobox::Scalar';
 
+*does = \&Moose::Object::does;
+
 package ARRAY;
+use base 'Moose::Autobox';
 use Moose;
 with 'Moose::Autobox::Array';
 
+*does = \&Moose::Object::does;
+
 package HASH;
+use base 'Moose::Autobox';
 use Moose;
 with 'Moose::Autobox::Hash';
 
+*does = \&Moose::Object::does;
+
 package CODE;
+use base 'Moose::Autobox';
 use Moose;
-with 'Moose::Autobox::Code';    
+with 'Moose::Autobox::Code';  
+
+*does = \&Moose::Object::does;
+  
 #    |;
 #    confess 'Could not create autobox packages because - ' . $@ if $@;
 #}               
@@ -44,26 +63,33 @@ Moose::Autobox - autoboxed for her pleasure
 
   use Moose::Autobox;
   use autobox;
-    
-  print "Squares: " . [ 1 .. 10 ]->map(sub { $_ * $_ })->join(', ');
+  
+  'Print squares from 1 to 10'->print;  
+  [ 1 .. 10 ]->map(sub { $_ * $_ })->join(', ')->print;
 
 =head1 DESCRIPTION
 
 =head1 ROLES
 
-  Item 
-      Undef
-      Defined
-          Value
-              Scalar*                
-          Ref
-              List
-                  Array*
-              Hash*
-              Code*
-
+  Item                  |
+      Undef             |
+      Defined           |
+          Scalar*     <-|- String, Number <--+
+          Ref           |                    |-- Value 
+              Array*  <-|- List <------------+
+              Hash*     |
+              Code*     |
+                      
   * indicates actual autoboxed types
-
+  
+=head1 NOTES  
+  
+  - String, Number & List are currently the only Values.
+  
+  - Indexed is pretty much an interface, we probably will 
+    need more of these (see Smalltalk Collection Trait 
+    Refactoring)
+  
 =head1 BUGS
 
 All complex software has bugs lurking in it, and this module is no 

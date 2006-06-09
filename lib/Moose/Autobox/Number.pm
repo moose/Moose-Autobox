@@ -1,10 +1,10 @@
-package Moose::Autobox::Item;     
-use Moose::Role 'requires';
+package Moose::Autobox::Number;
+use Moose::Role;
 
 our $VERSION = '0.01';
 
-requires 'defined';
-
+with 'Moose::Autobox::Value';
+     
 1;
 
 __END__
@@ -13,7 +13,7 @@ __END__
 
 =head1 NAME 
 
-Moose::Autobox::Item - the Item role
+Moose::Autobox::Number - the Number role
 
 =head1 SYNOPOSIS
 
