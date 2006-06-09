@@ -24,6 +24,8 @@ Moose::Autobox::Defined - the Defined role
 
 =head1 DESCRIPTION
 
+This is a role to describes a defined value. 
+
 =head1 METHODS
 
 =over 4

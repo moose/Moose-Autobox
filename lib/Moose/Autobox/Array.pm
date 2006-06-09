@@ -130,6 +130,8 @@ Moose::Autobox::Array - the Array role
 
 =head1 DESCRIPTION
 
+This is a role to describe operations on the Array type. 
+
 =head1 METHODS
 
 =over 4
@@ -150,7 +152,7 @@ Moose::Autobox::Array - the Array role
 
 =back
 
-=head2 Indexed
+=head2 Moose::Autobox::Indexed implementation
 
 =over 4
 
@@ -168,7 +170,7 @@ Moose::Autobox::Array - the Array role
 
 =back
 
-=head2 List
+=head2 Moose::Autobox::List implementation
 
 =over 4
 

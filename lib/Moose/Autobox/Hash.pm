@@ -58,9 +58,11 @@ Moose::Autobox::Hash - the Hash role
   use Moose::Autobox;
   use autobox;
   
-  { one => 1, two => 2 }->keys->join(', ')->print; # prints 'one, two'
+  print { one => 1, two => 2 }->keys->join(', '); # prints 'one, two'
 
 =head1 DESCRIPTION
+
+This is a role to describes a Hash value. 
 
 =head1 METHODS
 
@@ -72,7 +74,7 @@ Moose::Autobox::Hash - the Hash role
 
 =back
 
-=head2 Indexed
+=head2 Moose::Autobox::Indexed implementation
 
 =over 4
 

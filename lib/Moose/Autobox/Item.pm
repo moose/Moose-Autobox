@@ -22,6 +22,8 @@ Moose::Autobox::Item - the Item role
 
 =head1 DESCRIPTION
 
+This is the root of our role hierarchy. 
+
 =head1 METHODS
 
 =over 4

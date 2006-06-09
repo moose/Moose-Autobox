@@ -54,6 +54,11 @@ Moose::Autobox::List - the List role
 
 =head1 DESCRIPTION
 
+This is a role to describes a List interface. This is not 
+meant to be any specific Perl type, but instead an interface
+that certain Perl types might implement. Currenly only 
+L<Moose::Autobox::Array> implements this.
+
 =head1 METHODS
 
 =over 4

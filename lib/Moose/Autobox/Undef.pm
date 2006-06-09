@@ -24,6 +24,8 @@ Moose::Autobox::Undef - the Undef role
 
 =head1 DESCRIPTION
 
+This is a role to describes a undefined value. 
+
 =head1 METHODS
 
 =over 4

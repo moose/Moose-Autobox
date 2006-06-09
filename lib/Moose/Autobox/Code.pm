@@ -55,6 +55,8 @@ Moose::Autobox::Code - the Code role
 
 =head1 DESCRIPTION
 
+This is a role to describe operations on the Code type. 
+
 =head1 METHODS
 
 =over 4

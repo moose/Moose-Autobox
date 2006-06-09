@@ -23,6 +23,9 @@ Moose::Autobox::Scalar - the Scalar role
 
 =head1 DESCRIPTION
 
+This is a role to describes a Scalar value, which is defined 
+as the combination (union sort of) of a String and a Number.
+
 =head1 METHODS
 
 =over 4

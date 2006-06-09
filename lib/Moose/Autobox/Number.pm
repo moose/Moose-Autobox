@@ -22,6 +22,8 @@ Moose::Autobox::Number - the Number role
 
 =head1 DESCRIPTION
 
+This is a role to describes a Numeric value. 
+
 =head1 METHODS
 
 =over 4

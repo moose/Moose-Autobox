@@ -39,6 +39,8 @@ Moose::Autobox::String - the String role
 
 =head1 DESCRIPTION
 
+This is a role to describes a String value.
+
 =head1 METHODS
 
 =over 4

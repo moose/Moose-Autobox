@@ -25,12 +25,12 @@ Moose::Autobox::Value - the Value role
   use Moose::Autobox;
   use autobox;
   
-  5->print; # prints 5
-  
-  # excute a sub on the value
-  10->do(sub { $_ + 15 })->print; # prints 25
+  # execute a sub on the value
+  print 10->do(sub { $_ * $_ }); # prints 100
 
 =head1 DESCRIPTION
+
+This is a role to describes a defined (non-reference) Perl value.
 
 =head1 METHODS
 
@@ -38,7 +38,7 @@ Moose::Autobox::Value - the Value role
 
 =item B<meta>
 
-=item B<do>
+=item B<do (\&block)>
 
 =back
 

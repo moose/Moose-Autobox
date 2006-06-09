@@ -29,6 +29,13 @@ Moose::Autobox::Indexed - the Indexed role
 
 =head1 DESCRIPTION
 
+This is a role to describes an collection whose values can be 
+accessed by a key of some kind. 
+
+The role is entirely abstract, those which implement it must 
+supply all it's methods. Currently both L<Moose::Autobox::Array>
+and L<Moose::Autobox::Hash> implement this role.
+
 =head1 METHODS
 
 =over 4
