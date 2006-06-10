@@ -21,7 +21,7 @@ lib/Moose/Autobox/Undef.pm
 lib/Moose/Autobox/Value.pm
 t/000_load.t
 t/001_basic.t
-t/002_example.t
+t/002_role_hierarchy.t
 t/003_p6_example.t
 t/004_list_compressions.t
 t/005_string.t

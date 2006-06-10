@@ -78,6 +78,9 @@ shiney new technology (L<Moose::Role>) to accomplish it's goals.
 Use this at your own risk. If it breaks the lamp in the living room
 and your mother yells at you, don't come complaining to me.
 
+Also, as this is so experimental, it's API should not be considered 
+to be stable. It could very well change in radical ways.
+
 =head1 DESCRIPTION
 
 Moose::Autobox provides an implementation of SCALAR, ARRAY, HASH
@@ -123,6 +126,16 @@ autoboxed types (SCALAR, ARRAY, HASH & CODE).
   +------------------------+-------------------------------+
                                                           
   * indicates actual autoboxed types
+
+=head1 TODO
+
+=over 4
+
+=item More docs
+
+=item More tests
+
+=back
   
 =head1 NOTES  
   

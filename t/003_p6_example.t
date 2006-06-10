@@ -10,6 +10,12 @@ BEGIN {
     use_ok('Moose::Autobox');
 }
 
+=pod
+
+This comes from one of the examples in the Pugs distro.
+
+=cut
+
 {
     package Units::Bytes;
     use Moose::Role;
