@@ -1,5 +1,9 @@
 Revision history for Perl extension Moose::Autobox
 
+0.02 
+    - fixed Moose::Autobox so that PAUSE won't try to 
+      index SCALAR, ARRAY, HASH and CODE.
+
 0.01 Fri. June 9, 2006
     - Autoboxing, all the cool kids are doing it ;)
     

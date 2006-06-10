@@ -7,44 +7,45 @@ use warnings;
 use Carp        qw(confess);
 use Scalar::Util ();
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
             
 sub import {
     eval q|
-package SCALAR;
-
+package # hide from PAUSE
+    SCALAR;
 # NOTE:
 # this doesnt make sense, but 
 # I need to prevent Moose from 
 # assiging to @ISA
 use base 'UNIVERSAL';
-
 use Moose;
 with 'Moose::Autobox::Scalar';
 
 *does = \&Moose::Object::does;
 
-package ARRAY;
+package # hide from PAUSE
+    ARRAY;
 use base 'UNIVERSAL';
 use Moose;
 with 'Moose::Autobox::Array';
 
 *does = \&Moose::Object::does;
 
-package HASH;
+package # hide from PAUSE
+    HASH;
 use base 'UNIVERSAL';
 use Moose;
 with 'Moose::Autobox::Hash';
 
 *does = \&Moose::Object::does;
 
-package CODE;
+package # hide from PAUSE 
+    CODE;
 use base 'UNIVERSAL';
 use Moose;
 with 'Moose::Autobox::Code';  
 
 *does = \&Moose::Object::does;
-  
     |;
     confess 'Could not create autobox packages because - ' . $@ if $@;
 }               
