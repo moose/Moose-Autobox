@@ -15,11 +15,6 @@ __END__
 
 Moose::Autobox::Item - the Item role
 
-=head1 SYNOPOSIS
-
-  use Moose::Autobox;
-  use autobox;
-
 =head1 DESCRIPTION
 
 This is the root of our role hierarchy. 

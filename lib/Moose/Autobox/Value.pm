@@ -1,5 +1,5 @@
 package Moose::Autobox::Value;     
-use Moose::Role 'with', 'requires';
+use Moose::Role 'with';
 
 our $VERSION = '0.01';
 

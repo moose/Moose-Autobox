@@ -47,11 +47,6 @@ __END__
 
 Moose::Autobox::List - the List role
 
-=head1 SYNOPOSIS
-
-  use Moose::Autobox;
-  use autobox;
-
 =head1 DESCRIPTION
 
 This is a role to describes a List interface. This is not 
@@ -63,11 +58,15 @@ L<Moose::Autobox::Array> implements this.
 
 =over 4
 
-=item B<meta>
-
 =item B<reduce>
 
 =item B<zip>
+
+=back
+
+=over 4
+
+=item B<meta>
 
 =back
 

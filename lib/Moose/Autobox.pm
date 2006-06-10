@@ -17,7 +17,7 @@ package SCALAR;
 # this doesnt make sense, but 
 # I need to prevent Moose from 
 # assiging to @ISA
-use base 'Moose::Autobox';
+use base 'UNIVERSAL';
 
 use Moose;
 with 'Moose::Autobox::Scalar';
@@ -25,21 +25,21 @@ with 'Moose::Autobox::Scalar';
 *does = \&Moose::Object::does;
 
 package ARRAY;
-use base 'Moose::Autobox';
+use base 'UNIVERSAL';
 use Moose;
 with 'Moose::Autobox::Array';
 
 *does = \&Moose::Object::does;
 
 package HASH;
-use base 'Moose::Autobox';
+use base 'UNIVERSAL';
 use Moose;
 with 'Moose::Autobox::Hash';
 
 *does = \&Moose::Object::does;
 
 package CODE;
-use base 'Moose::Autobox';
+use base 'UNIVERSAL';
 use Moose;
 with 'Moose::Autobox::Code';  
 

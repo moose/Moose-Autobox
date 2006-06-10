@@ -15,11 +15,6 @@ __END__
 
 Moose::Autobox::Ref - the Ref role
 
-=head1 SYNOPOSIS
-
-  use Moose::Autobox;
-  use autobox;
-
 =head1 DESCRIPTION
 
 This is a role to describes a reference value. 

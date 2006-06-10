@@ -20,7 +20,10 @@ Moose::Autobox::Undef - the Undef role
 =head1 SYNOPOSIS
 
   use Moose::Autobox;
-  use autobox;
+  use autobox UNDEF => 'Moose::Autobox::Undef';
+
+  my $x;
+  $x->defined; # false
 
 =head1 DESCRIPTION
 
@@ -30,9 +33,13 @@ This is a role to describes a undefined value.
 
 =over 4
 
-=item B<meta>
-
 =item B<defined>
+
+=back
+
+=over 4
+
+=item B<meta>
 
 =back
 

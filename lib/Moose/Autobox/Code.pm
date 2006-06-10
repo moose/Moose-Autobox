@@ -48,8 +48,7 @@ Moose::Autobox::Code - the Code role
   use autobox;
   
   my $adder = sub { $_[0] + $_[1] };
-  
-  $add_2 = $adder->curry(2);
+  my $add_2 = $adder->curry(2);
   
   $add_2->(2); # returns 4
 
@@ -61,17 +60,24 @@ This is a role to describe operations on the Code type.
 
 =over 4
 
+=item B<curry (@values)>
+
+=item B<rcurry (@values)>
+
+=item B<conjoin (\&sub)>
+
+=item B<disjoin (\&sub)>
+
+=item B<compose (@subs)>
+
+This will take a list of C<@subs> and compose them all into a single 
+subroutine where the output of one sub will be the input of another. 
+
+=back
+
+=over 4
+
 =item B<meta>
-
-=item B<curry>
-
-=item B<rcurry>
-
-=item B<conjoin>
-
-=item B<disjoin>
-
-=item B<compose>
 
 =back
 

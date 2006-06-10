@@ -16,11 +16,6 @@ __END__
 
 Moose::Autobox::Scalar - the Scalar role
 
-=head1 SYNOPOSIS
-
-  use Moose::Autobox;
-  use autobox;
-
 =head1 DESCRIPTION
 
 This is a role to describes a Scalar value, which is defined 

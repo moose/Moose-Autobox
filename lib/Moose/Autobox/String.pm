@@ -45,8 +45,6 @@ This is a role to describes a String value.
 
 =over 4
 
-=item B<meta>
-
 =item B<chomp>
 
 =item B<chop>
@@ -64,6 +62,12 @@ This is a role to describes a String value.
 =item B<uc>
 
 =item B<ucfirst>
+
+=back
+
+=over 4
+
+=item B<meta>
 
 =back
 

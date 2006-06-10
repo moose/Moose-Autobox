@@ -22,11 +22,6 @@ __END__
 
 Moose::Autobox::Indexed - the Indexed role
 
-=head1 SYNOPOSIS
-
-  use Moose::Autobox;
-  use autobox;
-
 =head1 DESCRIPTION
 
 This is a role to describes an collection whose values can be 

@@ -21,6 +21,12 @@ Moose::Autobox::Defined - the Defined role
 
   use Moose::Autobox;
   use autobox;
+  
+  my $x;
+  $x->defined; # false
+  
+  $x = 10;
+  $x->defined; # true  
 
 =head1 DESCRIPTION
 
@@ -30,9 +36,13 @@ This is a role to describes a defined value.
 
 =over 4
 
-=item B<meta>
-
 =item B<defined>
+
+=back
+
+=over 4
+
+=item B<meta>
 
 =back
 

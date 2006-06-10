@@ -126,7 +126,13 @@ Moose::Autobox::Array - the Array role
   use Moose::Autobox;
   use autobox;
     
+  [ 1..5 ]->isa('ARRAY'); # true
+  [ a..z ]->does('Moose::Autobox::Array'); # true
+  [ 0..2 ]->does('Moose::Autobox::List'); # true  
+    
   print "Squares: " . [ 1 .. 10 ]->map(sub { $_ * $_ })->join(', ');
+  
+  print [ 1, 'number' ]->sprintf('%d is the loneliest %s');
 
 =head1 DESCRIPTION
 
@@ -136,41 +142,39 @@ This is a role to describe operations on the Array type.
 
 =over 4
 
-=item B<meta>
-
 =item B<pop>
 
-=item B<push>
+=item B<push ($value)>
 
 =item B<shift>
 
-=item B<unshift>
+=item B<unshift ($value)>
 
-=item B<delete>
+=item B<delete ($index)>
 
-=item B<sprintf>
+=item B<sprintf ($format_string)>
 
 =back
 
-=head2 Moose::Autobox::Indexed implementation
+=head2 Indexed implementation
 
 =over 4
 
-=item B<at>
+=item B<at ($index)>
 
-=item B<put>
+=item B<put ($index, $value)>
 
-=item B<exists>
+=item B<exists ($index)>
 
 =item B<keys>
 
-=item B<kv>
-
 =item B<values>
+
+=item B<kv>
 
 =back
 
-=head2 Moose::Autobox::List implementation
+=head2 List implementation
 
 =over 4
 
@@ -178,17 +182,23 @@ This is a role to describe operations on the Array type.
 
 =item B<tail>
 
-=item B<join>
+=item B<join (?$seperator)>
 
 =item B<length>
 
-=item B<map>
+=item B<map (\&block)>
 
-=item B<grep>
+=item B<grep (\&block)>
 
 =item B<reverse>
 
-=item B<sort>
+=item B<sort (?\&block)>
+
+=back
+
+=over 4
+
+=item B<meta>
 
 =back
 

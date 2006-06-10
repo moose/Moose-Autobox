@@ -68,13 +68,11 @@ This is a role to describes a Hash value.
 
 =over 4
 
-=item B<meta>
-
 =item B<delete>
 
 =back
 
-=head2 Moose::Autobox::Indexed implementation
+=head2 Indexed implementation
 
 =over 4
 
@@ -89,6 +87,12 @@ This is a role to describes a Hash value.
 =item B<values>
 
 =item B<kv>
+
+=back
+
+=over 4
+
+=item B<meta>
 
 =back
 
