@@ -15,7 +15,10 @@ sub chomp   { CORE::chomp   $_[0] }
 sub chop    { CORE::chop    $_[0] }
 sub reverse { CORE::reverse $_[0] }
 sub length  { CORE::length  $_[0] }
-sub index   { CORE::index   $_[0], $_[1], (defined $_[2] ? $_[2] : ()) }
+sub index   { 
+    return CORE::index($_[0], $_[1]) if scalar @_ == 2;
+    return CORE::index($_[0], $_[1], $_[2]);
+}
 
 # FIXME: this is not working 
 #sub rindex  { CORE::rindex  $_[0], $_[1], (defined $_[2] ? $_[2] : ()) }

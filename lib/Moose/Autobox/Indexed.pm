@@ -3,14 +3,12 @@ use Moose::Role 'requires';
 
 our $VERSION = '0.01';
 
-requires qw/
-    at
-    put
-    exists 
-    keys 
-    values 
-    kv
-/;
+requires 'at';
+requires 'put';
+requires 'exists'; 
+requires 'keys';
+requires 'values'; 
+requires 'kv';
 
 1;
 

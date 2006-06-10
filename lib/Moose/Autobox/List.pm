@@ -7,16 +7,14 @@ our $VERSION = '0.01';
 
 with 'Moose::Autobox::Value';
 
-requires qw/
-    head 
-    tail
-    length 
-    join     
-    grep 
-    map 
-    sort
-    reverse
-/;
+requires 'head';
+requires 'tail';
+requires 'length'; 
+requires 'join'; 
+requires 'grep'; 
+requires 'map'; 
+requires 'sort';
+requires 'reverse';
 
 sub reduce {
     my ($array, $func) = @_;
