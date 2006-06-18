@@ -32,6 +32,12 @@ sub conjoin {
 	return sub { $f->(@_) && $f2->(@_) }    
 }
 
+#sub dump {
+    #my ($self) = @_;
+    #require Data::Dump::Streamer;
+    #return Data::Dump::Streamer::Dump($self)->Out();
+#}
+
 1;
 
 __END__

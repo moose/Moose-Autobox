@@ -1,5 +1,6 @@
 package Moose::Autobox::Array;
 use Moose::Role 'with';
+use Perl6::Junction;
 use autobox;
 
 our $VERSION = '0.01';
@@ -111,6 +112,28 @@ sub kv {
     $array->keys->map(sub { [ $_, $array->[$_] ] });
 }
 
+## Junctions
+
+sub all {
+    my ($array) = @_;     
+    return Perl6::Junction::All->all(@$array);
+}
+
+sub any {
+    my ($array) = @_;     
+    return Perl6::Junction::Any->any(@$array);
+}
+
+sub none {
+    my ($array) = @_;     
+    return Perl6::Junction::None->none(@$array);
+}
+
+sub one {
+    my ($array) = @_; 
+    return Perl6::Junction::One->one(@$array);
+}
+
 1;
 
 __END__
@@ -193,6 +216,20 @@ This is a role to describe operations on the Array type.
 =item B<reverse>
 
 =item B<sort (?\&block)>
+
+=back
+
+=head2 Junctions
+
+=over 4
+
+=item B<all>
+
+=item B<any>
+
+=item B<none>
+
+=item B<one>
 
 =back
 

@@ -1,0 +1,3 @@
+Add create() to Moose::Meta::Class to allow for roles to be passed in.
+
+Change Moose::Autobox->import() to use that instead of an eval.

@@ -5,6 +5,12 @@ our $VERSION = '0.01';
 
 with 'Moose::Autobox::Defined';
 
+sub dump {
+    my $self = shift;
+    require Data::Dumper;
+    return Data::Dumper::Dumper($self);
+}
+
 1;
 
 __END__
@@ -24,6 +30,8 @@ This is a role to describes a reference value.
 =over 4
 
 =item B<meta>
+
+=item B<dump>
 
 =back
 
