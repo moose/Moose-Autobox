@@ -3,7 +3,7 @@ use Moose::Role 'with';
 use Perl6::Junction;
 use autobox;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 with 'Moose::Autobox::Ref',
      'Moose::Autobox::List',
@@ -156,6 +156,8 @@ Moose::Autobox::Array - the Array role
   print "Squares: " . [ 1 .. 10 ]->map(sub { $_ * $_ })->join(', ');
   
   print [ 1, 'number' ]->sprintf('%d is the loneliest %s');
+  
+  print ([ 1 .. 5 ]->any == 3) ? 'true' : 'false'; # prints 'true'
 
 =head1 DESCRIPTION
 
