@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 55;
+use Test::More tests => 56;
 
 BEGIN {
     use_ok('Moose::Autobox');
@@ -92,6 +92,12 @@ is_deeply($a, [ 4, 2, 6, 78, 101, 2 ], '... original value is now changed');
 
 is($a->shift(), 4, '... got the right unshift-ed value');
 is_deeply($a, [ 2, 6, 78, 101, 2 ], '... original value is now changed');
+
+
+is_deeply(
+$a->slice([ 1, 2, 4 ]), 
+[ 6, 78, 2 ], 
+'... got the right sliced value');
 
 is_deeply(
 $a->unshift(10), 

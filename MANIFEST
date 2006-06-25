@@ -5,6 +5,7 @@ META.yml
 MANIFEST
 MANIFEST.SKIP
 README
+examples/tic_tac_toe.t
 lib/Moose/Autobox.pm
 lib/Moose/Autobox/Array.pm
 lib/Moose/Autobox/Code.pm

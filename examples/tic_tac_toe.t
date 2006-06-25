@@ -8,7 +8,7 @@ use Moose::Autobox::Undef;
 
 use autobox UNDEF => 'Moose::Autobox::Undef';
 
-sub ARRAY::print_board {
+sub print_board {
     my ($b) = @_;
     my $count = 0;
     $b->map(sub {
@@ -17,22 +17,17 @@ sub ARRAY::print_board {
     });
 }
 
-my $g = [ ('.') x 9 ];
+my $board = [ ('.') x 9 ];
 
-$g->print_board();
+print_board($board);
 
-my $players = { 'X' => 'Player 1', 'O' => 'Player 2' };
-
-my $player_character = [ 'X', 'O' ]->any;
-
-my $entered = {};
 my $choice = [ 1 .. 9 ]->any;
 
 my $player = 'X';
-while ($g->all == '.') {
+while ($board->any eq '.') {
     
     INPUT: {
-        print($players->{$player} . " Enter the Position [1-9]: ");
+        print("Player ($player), enter the Position [1-9]: ");
         my $in = <>;
 
         unless ($in == $choice) {
@@ -41,39 +36,29 @@ while ($g->all == '.') {
         }
 
         my $idx = $in - 1;
-        if ($entered->exists($idx)) {
+        if ($board->[$idx] ne '.') {
             print "\n\tElement already entered at $in\n";
             redo INPUT;
         }
 
-        $g->[$idx] = $player;
-        $entered->{$idx}++;
+        $board->[$idx] = $player;
     }
 
-    $g->print_board;
+    print_board($board);
     
     [
         [ 0, 1, 2 ], [ 3, 4, 5 ], [ 6, 7, 8 ],
         [ 0, 3, 6 ], [ 1, 4, 7 ], [ 2, 5, 8 ],
         [ 0, 4, 8 ], [ 2, 4, 6 ],
-    ]->map(sub {
-        
-        #my @row = @{$g}[$_->[0], $_->[1], $_->[2]];
-        #my $row = \@row;
-        #warn $row->dump;
-        # FIX ME
-        #(($row->all == 'X') || ($row->all == 'O'))&& warn "Wow, this worked";
-        
-        if ( ( $players->exists($g->[$_->[0]]) &&
-               $players->exists($g->[$_->[1]]) &&
-               $players->exists($g->[$_->[2]]) ) 
-             &&
-             ( ( $g->[$_->[0]] eq $g->[$_->[1]] ) && 
-               ( $g->[$_->[1]] eq $g->[$_->[2]] ) ) ) 
-        {
-            print("\n\t$players->{$player} Wins\n");
+    ]->map(sub {    
+            
+        my $row = $board->slice($_);
+                
+        if (($row->all eq 'X') || ($row->all eq 'O')) {
+            print("\n\tPlayer ($player) Wins\n");
             exit;
         }
+        
     });
 
     $player = $player eq 'X' ? 'O' : 'X';
@@ -94,7 +79,14 @@ of the classic Tic-Tac-Toe game.
 This uses a modified version of the one Rob Kinyon created
 L<http://www.perlmonks.org/index.pl?node_id=451302>. 
 
-=head1 AUTHORS
+=head1 AUTHOR
+
+Stevan Little, E<lt>stevan@iinteractive.comE<gt>
+
+=head1 ACKNOLEDGEMENTS
+
+This code was ported from the version in the Pugs examples/
+directory. The authors of that were:
 
 mkirank L<http://www.perlmonks.org/index.pl?node_id=451261>
 

@@ -3,6 +3,9 @@ Revision history for Perl extension Moose::Autobox
 0.02 
     - fixed Moose::Autobox so that PAUSE won't try to 
       index SCALAR, ARRAY, HASH and CODE.
+      
+    - added examples/ directory 
+      - ported tic-tac-toe from the Pugs examples
     
     * Moose::Autobox::Ref
       - added &dump method which will use Data::Dumper

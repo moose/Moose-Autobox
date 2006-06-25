@@ -36,7 +36,12 @@ sub delete {
 sub shift { 
     my ($array) = @_;    
     CORE::shift @$array; 
-}     
+}    
+
+sub slice {
+    my ($array, $indicies) = @_;
+    [ @{$array}[ @{$indicies} ] ];
+} 
 
 # NOTE: 
 # sprintf args need to be reversed, 
@@ -178,6 +183,8 @@ This is a role to describe operations on the Array type.
 =item B<delete ($index)>
 
 =item B<sprintf ($format_string)>
+
+=item B<slice (@indices)>
 
 =back
 
