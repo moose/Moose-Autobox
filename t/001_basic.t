@@ -10,7 +10,7 @@ BEGIN {
     use_ok('Moose::Autobox::Undef');
 }
 
-use autobox UNDEF => 'Moose::Autobox::Undef';
+use Moose::Autobox;
 
 # SCALAR & UNDEF
 

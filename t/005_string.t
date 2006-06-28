@@ -10,7 +10,7 @@ BEGIN {
     use_ok('Moose::Autobox');
 }
 
-use autobox;
+use Moose::Autobox;
 
 is('Hello World'->lc, 'hello world', '... $str->lc');
 is('Hello World'->uc, 'HELLO WORLD', '... $str->uc');

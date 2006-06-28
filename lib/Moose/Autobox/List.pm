@@ -1,9 +1,9 @@
 
 package Moose::Autobox::List;
 use Moose::Role 'with', 'requires';
-use autobox;
+use Moose::Autobox;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 with 'Moose::Autobox::Value';
 

@@ -9,7 +9,7 @@ BEGIN {
     use_ok('Moose::Autobox');
 }
 
-use autobox;
+use Moose::Autobox;
 
 is_deeply(
 [ 1 .. 5 ]->map(sub { $_ * $_ }),
