@@ -152,7 +152,6 @@ Moose::Autobox::Array - the Array role
 =head1 SYNOPOSIS
 
   use Moose::Autobox;
-  use autobox;
     
   [ 1..5 ]->isa('ARRAY'); # true
   [ a..z ]->does('Moose::Autobox::Array'); # true

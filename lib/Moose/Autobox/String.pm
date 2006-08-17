@@ -36,7 +36,6 @@ Moose::Autobox::String - the String role
 =head1 SYNOPOSIS
 
   use Moose::Autobox;
-  use autobox;
   
   "Hello World"->uc; # HELLO WORLD
 

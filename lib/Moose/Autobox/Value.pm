@@ -23,7 +23,6 @@ Moose::Autobox::Value - the Value role
 =head1 SYNOPOSIS
 
   use Moose::Autobox;
-  use autobox;
   
   # execute a sub on the value
   print 10->do(sub { $_ * $_ }); # prints 100

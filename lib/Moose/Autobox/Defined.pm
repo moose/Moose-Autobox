@@ -20,7 +20,6 @@ Moose::Autobox::Defined - the Defined role
 =head1 SYNOPOSIS
 
   use Moose::Autobox;
-  use autobox;
   
   my $x;
   $x->defined; # false

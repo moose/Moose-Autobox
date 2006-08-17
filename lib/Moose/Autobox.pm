@@ -11,6 +11,8 @@ our $VERSION = '0.03';
 
 use base 'autobox';
 
+use Moose::Autobox::Undef;
+
 sub import {
     (shift)->SUPER::import(
         DEFAULT => 'Moose::Autobox::',
@@ -69,12 +71,11 @@ __END__
 
 =head1 NAME 
 
-Moose::Autobox - Autoboxed for her pleasure
+Moose::Autobox - Ruby ain't got nothin on us
 
 =head1 SYNOPOSIS
 
   use Moose::Autobox;
-  use autobox;
   
   print 'Print squares from 1 to 10 : ';
   print [ 1 .. 10 ]->map(sub { $_ * $_ })->join(', ');

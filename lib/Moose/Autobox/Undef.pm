@@ -20,7 +20,6 @@ Moose::Autobox::Undef - the Undef role
 =head1 SYNOPOSIS
 
   use Moose::Autobox;
-  use autobox UNDEF => 'Moose::Autobox::Undef';
 
   my $x;
   $x->defined; # false

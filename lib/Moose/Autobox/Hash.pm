@@ -56,7 +56,6 @@ Moose::Autobox::Hash - the Hash role
 =head1 SYNOPOSIS
 
   use Moose::Autobox;
-  use autobox;
   
   print { one => 1, two => 2 }->keys->join(', '); # prints 'one, two'
 
