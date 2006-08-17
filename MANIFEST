@@ -26,5 +26,6 @@ t/002_role_hierarchy.t
 t/003_p6_example.t
 t/004_list_compressions.t
 t/005_string.t
+t/006_y_combinator.t
 t/pod.t
 t/pod_coverage.t
