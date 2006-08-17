@@ -51,11 +51,7 @@ use Moose::Autobox::Undef;
 
 }
 
-{
-    package Moose::Autobox::SCALAR;
-    use Moose 'with';
-    with 'Units::Time';
-}
+Moose::Autobox->mixin_additional_role(SCALAR => 'Units::Time');
 
 $\ = "\n";
 

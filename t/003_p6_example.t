@@ -37,11 +37,7 @@ This comes from one of the examples in the Pugs distro.
     }
 }
 
-{
-    package Moose::Autobox::SCALAR;
-    use Moose 'with';
-    with 'Units::Bytes';
-}
+Moose::Autobox->mixin_additional_role(SCALAR => 'Units::Bytes');
 
 sub testing_bytes {
     ::dies_ok { 10->bytes } '... cannot do the autoboxing lexically';

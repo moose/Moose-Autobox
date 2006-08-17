@@ -26,11 +26,7 @@ use Moose::Autobox;
     }
 }
 
-{
-    package Moose::Autobox::SCALAR;
-    use Moose 'with';
-    with 'Units::Bytes';
-}
+Moose::Autobox->mixin_additional_role(SCALAR => 'Units::Bytes');
 
 $\ = "\n";
 
