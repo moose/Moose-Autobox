@@ -6,7 +6,8 @@ use warnings;
 use Moose::Autobox;
 
 {
-    package Units::Bytes;
+    package # hide from PAUSE
+        Units::Bytes;
     use Moose::Role;
     use Moose::Autobox;
     
@@ -35,3 +36,33 @@ print "2 megabytes are " . 2->megabytes . " bytes";
 print "1 gigabyte is "   . 1->gigabyte  . " bytes";
 print "2 terabyes are "  . 2->terabytes . " bytes";
 
+=pod
+
+=head1 NAME
+
+Unit::Bytes
+
+=head1 SYNOPSIS
+
+  Moose::Autobox->mixin_additional_role(SCALAR => 'Units::Bytes');
+
+  print "5 kilobytes are " . 5->kilobytes . " bytes";
+  print "2 megabytes are " . 2->megabytes . " bytes";
+  print "1 gigabyte is "   . 1->gigabyte  . " bytes";
+  print "2 terabyes are "  . 2->terabytes . " bytes";
+
+=head1 DESCRIPTION
+
+This is a Moose::Autobox port of the perl6 vmethods example.
+
+=head1 AUTHOR
+
+Stevan Little, E<lt>stevan@iinteractive.comE<gt>
+
+=head1 ACKNOLEDGEMENTS
+
+This code was ported from the version in the Pugs 
+examples/vmethods/ directory. See that for original author 
+information.
+
+=cut
