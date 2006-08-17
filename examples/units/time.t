@@ -4,7 +4,6 @@ use strict;
 use warnings;
 
 use Moose::Autobox;
-use Moose::Autobox::Undef;
 
 {
     package Units::Time;
