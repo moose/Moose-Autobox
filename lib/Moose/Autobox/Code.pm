@@ -32,6 +32,8 @@ sub conjoin {
 	return sub { $f->(@_) && $f2->(@_) }    
 }
 
+# fixed point combinators
+
 sub u {
     my $f = shift;
     sub { $f->($f, @_) };
@@ -39,14 +41,8 @@ sub u {
 
 sub y {
     my $f = shift;
-    (sub { my $h = shift; sub { $f->(($h->u())->())->(@_) } }->u())->();
+    (sub { my $h = shift; sub { $f->(($h->u)->())->(@_) } }->u)->();
 }
-
-#sub dump {
-    #my ($self) = @_;
-    #require Data::Dump::Streamer;
-    #return Data::Dump::Streamer::Dump($self)->Out();
-#}
 
 1;
 
@@ -123,6 +119,8 @@ This implements the U combinator.
 =over 4
 
 =item L<http://en.wikipedia.org/wiki/Fixed_point_combinator>
+
+=item L<http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/20469>
 
 =back
 
