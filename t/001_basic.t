@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 55;
+use Test::More tests => 56;
 
 BEGIN {
     use_ok('Moose::Autobox');
@@ -211,5 +211,10 @@ is_deeply(
 $h,
 { one => 1, two => 2, three => 3 },
 '... got the value deleted correctly');
+
+is_deeply(
+$h->merge({ three => 33, four => 44 }),
+{ one => 1, two => 2, three => 33, four => 44 },
+'... got the hashes merged correctly');
 
 
