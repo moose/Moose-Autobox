@@ -1,7 +1,7 @@
 package Moose::Autobox::String;
 use Moose::Role;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 with 'Moose::Autobox::Value';
 
@@ -19,10 +19,11 @@ sub index   {
     return CORE::index($_[0], $_[1]) if scalar @_ == 2;
     return CORE::index($_[0], $_[1], $_[2]);
 }
+sub rindex  {
+    return CORE::rindex($_[0], $_[1]) if scalar @_ == 2;
+    return CORE::rindex($_[0], $_[1], $_[2]);
+}
 
-# FIXME: this is not working 
-#sub rindex  { CORE::rindex  $_[0], $_[1], (defined $_[2] ? $_[2] : ()) }
-     
 1;
 
 __END__
@@ -61,6 +62,8 @@ This is a role to describes a String value.
 
 =item B<reverse>
 
+=item B<rindex>
+
 =item B<uc>
 
 =item B<ucfirst>
@@ -83,6 +86,8 @@ to cpan-RT.
 
 Stevan Little E<lt>stevan@iinteractive.comE<gt>
 
+Anders Nor Berle E<lt>debolaz@gmail.comE<gt>
+
 =head1 COPYRIGHT AND LICENSE
 
 Copyright 2006 by Infinity Interactive, Inc.
@@ -93,3 +98,4 @@ This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
 =cut
+
