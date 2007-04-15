@@ -1,5 +1,12 @@
 Revision history for Perl extension Moose::Autobox
 
+0.04 <release date>
+    * Moose::Autobox::Hash
+      - added method for shallow hash merging
+
+    * Moose::Autobox::String
+      - fixed rindex method
+
 0.03 Thurs. Aug 17, 2006
 
     * Moose::Autobox 
