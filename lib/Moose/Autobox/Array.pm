@@ -139,6 +139,11 @@ sub one {
     return Perl6::Junction::One->one(@$array);
 }
 
+## Print
+
+sub print { CORE::print @{$_[0]} }
+sub say   { CORE::print @{$_[0]}, "\n" }
+
 1;
 
 __END__
@@ -244,6 +249,10 @@ This is a role to describe operations on the Array type.
 =over 4
 
 =item B<meta>
+
+=item B<print>
+
+=item B<say>
 
 =back
 

@@ -3,13 +3,15 @@
 use strict;
 use warnings;
 
-use Test::More tests => 58;
+use Test::More tests => 62;
 
 BEGIN {
     use_ok('Moose::Autobox');
 }
 
 use Moose::Autobox;
+
+my $VAR1; # for eval of dumps
 
 # SCALAR & UNDEF
 
@@ -18,6 +20,12 @@ ok(!$s->defined, '... got a undefined value');
 
 $s = 5;
 ok($s->defined, '... got a defined value');
+
+eval $s->dump;
+is($VAR1, 5 , '... eval of SCALAR->dump works');
+
+eval $s->perl;
+is($s->perl, $s->dump, '... SCALAR->dump equals SCALAR->perl');
 
 # CODE
 
@@ -174,11 +182,11 @@ $a,
 [ 15, 20, 30, 10, 2, 6, 78, 101, 2, 10, 15, 20, 30 ], 
 '... the value is correctly put');
 
-my $expected_dump = qr/^\$VAR1\s*=\s*\[\s*15,\s*20,\s*30,\s*10,\s*2,\s*6,\s*78,\s*101,\s*2,\s*10,\s*15,\s*20,\s*30\s*\]\s*;\s*$/msx;
+eval($a->dump);
+is_deeply( $VAR1,
+           [ 15, 20, 30, 10, 2, 6, 78, 101, 2, 10, 15, 20, 30 ], 
+           '... the value is correctly dumped');
 
-like( $a->dump,
-      $expected_dump,
-      '... the value is correctly dumped' );
 is( $a->dump,
     $a->perl,
     '... the value is correctly dumped with perl()' );
@@ -227,4 +235,12 @@ $h->merge({ three => 33, four => 44 }),
 { one => 1, two => 2, three => 33, four => 44 },
 '... got the hashes merged correctly');
 
+eval($h->dump);
+is_deeply( $VAR1,
+           { one => 1, two => 2, three => 3 },
+           '... the value is correctly dumped');
+
+is( $h->dump,
+    $h->perl,
+    '... the value is correctly dumped with perl()' );
 

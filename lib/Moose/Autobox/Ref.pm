@@ -5,14 +5,6 @@ our $VERSION = '0.02';
 
 with 'Moose::Autobox::Defined';
 
-sub dump {
-    my $self = shift;
-    require Data::Dumper;
-    return Data::Dumper::Dumper($self);
-}
-
-*perl = *dump;
-
 1;
 
 __END__
@@ -32,14 +24,6 @@ This is a role to describes a reference value.
 =over 4
 
 =item B<meta>
-
-=item B<dump>
-
-Calls Data::Dumper::Dumper.
-
-=item B<perl>
-
-Same as B<dump>. For symmetry with Perl6's .perl method.
 
 =back
 

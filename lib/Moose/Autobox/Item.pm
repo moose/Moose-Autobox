@@ -5,6 +5,14 @@ our $VERSION = '0.01';
 
 requires 'defined';
 
+sub dump {
+    my $self = shift;
+    require Data::Dumper;
+    return Data::Dumper::Dumper($self);
+}
+
+*perl = *dump;
+
 1;
 
 __END__
@@ -24,6 +32,18 @@ This is the root of our role hierarchy.
 =over 4
 
 =item B<meta>
+
+=item B<dump>
+
+Calls Data::Dumper::Dumper.
+
+=item B<perl>
+
+Same as B<dump>. For symmetry with Perl6's .perl method.
+
+Like &print with newline.
+
+=item B<print2>
 
 =back
 

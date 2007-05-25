@@ -52,6 +52,9 @@ sub kv {
     [ CORE::map { [ $_, $hash->{$_} ] } CORE::keys %$hash ];    
 }
 
+sub print   { CORE::print %{$_[0]} }
+sub say     { CORE::print %{$_[0]}, "\n" }
+
 1;
 
 __END__
@@ -106,6 +109,10 @@ shallow merging.
 =over 4
 
 =item B<meta>
+
+=item B<print>
+
+=item B<say>
 
 =back
 

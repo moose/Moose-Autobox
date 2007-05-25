@@ -6,6 +6,8 @@ our $VERSION = '0.01';
 with 'Moose::Autobox::String',
      'Moose::Autobox::Number';     
      
+sub print { CORE::print $_[0] }
+sub say   { CORE::print $_[0], "\n" }
 1;
 
 __END__
@@ -26,6 +28,10 @@ as the combination (union sort of) of a String and a Number.
 =over 4
 
 =item B<meta>
+
+=item B<print>
+
+=item B<say>
 
 =back
 

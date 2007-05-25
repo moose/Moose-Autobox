@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 18;
+use Test::More tests => 20;
 use Test::Exception;
 
 BEGIN {
@@ -11,6 +11,8 @@ BEGIN {
 }
 
 use Moose::Autobox;
+
+my $VAR1; # for eval of dumps
 
 is('Hello World'->lc, 'hello world', '... $str->lc');
 is('Hello World'->uc, 'HELLO WORLD', '... $str->uc');
@@ -44,4 +46,10 @@ is('Hello World, Hello'->index('Hello', 6), 13, '... got the correct index');
 is('Hello World, Hello'->rindex('Hello'), 13, '... got the correct right index');
 
 is('Hello World, Hello'->rindex('Hello', 6), 0, '... got the correct right index');
+
+eval 'Hello World, Hello'->dump;
+is($VAR1, 'Hello World, Hello' , '... eval of &dump works');
+
+eval 'Hello World, Hello'->perl;
+is($VAR1, 'Hello World, Hello' , '... eval of &perl works');
 

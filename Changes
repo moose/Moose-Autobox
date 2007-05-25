@@ -7,10 +7,17 @@ Revision history for Perl extension Moose::Autobox
     * Moose::Autobox::String
       - fixed rindex method
 
-    * Moose::Autobox::Ref
+    * Moose::Autobox::Item
+      - moved &dump from ::Ref to ::Item, so that it can be used
+        for the other types too
+
       - added &perl method which is an alias for &dump for symmetry
         with Perl6's .perl
-      
+
+    * Moose::Autobox::Scalar/Array/Hash
+      - added &print/&say to SCALAR, ARRAY and HASH
+
+
 0.03 Thurs. Aug 17, 2006
 
     * Moose::Autobox 
