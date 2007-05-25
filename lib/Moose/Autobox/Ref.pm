@@ -11,6 +11,8 @@ sub dump {
     return Data::Dumper::Dumper($self);
 }
 
+*perl = *dump;
+
 1;
 
 __END__
@@ -32,6 +34,12 @@ This is a role to describes a reference value.
 =item B<meta>
 
 =item B<dump>
+
+Calls Data::Dumper::Dumper.
+
+=item B<perl>
+
+Same as B<dump>. For symmetry with Perl6's .perl method.
 
 =back
 

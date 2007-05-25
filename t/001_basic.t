@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 56;
+use Test::More tests => 58;
 
 BEGIN {
     use_ok('Moose::Autobox');
@@ -173,6 +173,16 @@ is_deeply(
 $a, 
 [ 15, 20, 30, 10, 2, 6, 78, 101, 2, 10, 15, 20, 30 ], 
 '... the value is correctly put');
+
+my $expected_dump = qr/^\$VAR1\s*=\s*\[\s*15,\s*20,\s*30,\s*10,\s*2,\s*6,\s*78,\s*101,\s*2,\s*10,\s*15,\s*20,\s*30\s*\]\s*;\s*$/msx;
+
+like( $a->dump,
+      $expected_dump,
+      '... the value is correctly dumped' );
+is( $a->dump,
+    $a->perl,
+    '... the value is correctly dumped with perl()' );
+
 
 # Hash
 
