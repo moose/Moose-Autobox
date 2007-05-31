@@ -1,4 +1,4 @@
-Moose::Autobox version 0.03
+Moose::Autobox version 0.04
 ===========================
 
 See the individual module documentation for more information
@@ -22,7 +22,7 @@ This module requires these other modules and libraries:
 
 COPYRIGHT AND LICENCE
 
-Copyright (C) 2006 Infinity Interactive, Inc.
+Copyright (C) 2006-2007 Infinity Interactive, Inc.
 
 http://www.iinteractive.com
 
