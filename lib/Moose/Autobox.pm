@@ -7,7 +7,7 @@ use warnings;
 use Carp        qw(confess);
 use Scalar::Util ();
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 use base 'autobox';
 
@@ -153,9 +153,17 @@ to cpan-RT.
 
 Stevan Little E<lt>stevan@iinteractive.comE<gt>
 
+B<with contributions from:>
+
+Anders (Debolaz) Nor Berle
+
+Matt (mst) Trout
+
+renormalist
+
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2006 by Infinity Interactive, Inc.
+Copyright 2006-2007 by Infinity Interactive, Inc.
 
 L<http://www.iinteractive.com>
 

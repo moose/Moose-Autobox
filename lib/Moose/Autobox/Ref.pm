@@ -1,7 +1,7 @@
 package Moose::Autobox::Ref;     
 use Moose::Role 'with';
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 with 'Moose::Autobox::Defined';
 
@@ -39,7 +39,7 @@ Stevan Little E<lt>stevan@iinteractive.comE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2006 by Infinity Interactive, Inc.
+Copyright 2006-2007 by Infinity Interactive, Inc.
 
 L<http://www.iinteractive.com>
 
