@@ -1,5 +1,8 @@
 Revision history for Perl extension Moose::Autobox
 
+    * Moose::Autobox
+      - fixed loading approach so that Moose::Object doesn't end up in isa
+
 0.04 Thurs. May 31, 2007
     * Moose::Autobox::Hash
       - added method for shallow hash merging
@@ -16,7 +19,6 @@ Revision history for Perl extension Moose::Autobox
 
     * Moose::Autobox::Scalar/Array/Hash
       - added &print/&say to SCALAR, ARRAY and HASH
-
 
 0.03 Thurs. Aug 17, 2006
 

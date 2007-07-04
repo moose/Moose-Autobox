@@ -30,34 +30,42 @@ sub mixin_additional_role {
 {
                         
     package Moose::Autobox::SCALAR;
-    # NOTE:
-    # this doesnt make sense, but 
-    # I need to prevent Moose from 
-    # assiging to @ISA
-    use base 'UNIVERSAL';
-    use Moose;
-    with 'Moose::Autobox::Scalar';
+
+    use Moose::Autobox::Scalar;
+
+    use metaclass 'Moose::Meta::Class';
+
+    __PACKAGE__->meta->_apply_all_roles('Moose::Autobox::Scalar');
 
     *does = \&Moose::Object::does;
 
     package Moose::Autobox::ARRAY;
-    use base 'UNIVERSAL';
-    use Moose;
-    with 'Moose::Autobox::Array';
+
+    use Moose::Autobox::Array;
+
+    use metaclass 'Moose::Meta::Class';
+
+    __PACKAGE__->meta->_apply_all_roles('Moose::Autobox::Array');
 
     *does = \&Moose::Object::does;
 
     package Moose::Autobox::HASH;
-    use base 'UNIVERSAL';
-    use Moose;
-    with 'Moose::Autobox::Hash';
+
+    use Moose::Autobox::Hash;
+
+    use metaclass 'Moose::Meta::Class';
+
+    __PACKAGE__->meta->_apply_all_roles('Moose::Autobox::Hash');
 
     *does = \&Moose::Object::does;
 
     package Moose::Autobox::CODE;
-    use base 'UNIVERSAL';
-    use Moose;
-    with 'Moose::Autobox::Code';  
+
+    use Moose::Autobox::Code;
+
+    use metaclass 'Moose::Meta::Class';
+
+    __PACKAGE__->meta->_apply_all_roles('Moose::Autobox::Code');
 
     *does = \&Moose::Object::does;            
  
