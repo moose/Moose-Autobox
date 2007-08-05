@@ -7,7 +7,7 @@ use warnings;
 use Carp        qw(confess);
 use Scalar::Util ();
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 use base 'autobox';
 
