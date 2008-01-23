@@ -6,9 +6,9 @@ my $build = Module::Build->new(
     module_name => 'Moose::Autobox',
     license => 'perl',
     requires => {
-        'autobox'         => '1.03',
+        'autobox'         => '1.22',
         'Moose'           => '0.34',
-        'Perl6::Junction' => '1.22',
+        'Perl6::Junction' => '1.10',
     },
     optional => {
     },
