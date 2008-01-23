@@ -1,10 +1,14 @@
 Revision history for Perl extension Moose::Autobox
 
-0.06
+0.06 Tues. Jan. 22, 2008
+    ~~ updated copyright dates & some docs ~~   
+
     * Moose::Autobox
       - fixed role application code to follow the new
-        Moose::Util based API, upped the Moose version 
-        dependency.
+        Moose::Util based API
+        
+    - upped the Moose version dependency
+    - upped the autobox version dependency 
 
 0.05 Sun. Aug. 5, 2007
     * Moose::Autobox

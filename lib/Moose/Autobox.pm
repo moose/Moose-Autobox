@@ -6,6 +6,7 @@ use warnings;
 
 use Carp        qw(confess);
 use Scalar::Util ();
+use Moose::Util  ();
 
 our $VERSION = '0.06';
 
@@ -79,7 +80,7 @@ __END__
 
 =head1 NAME 
 
-Moose::Autobox - Ruby ain't got nothin on us
+Moose::Autobox - Autoboxed wrappers for Native Perl datatypes 
 
 =head1 SYNOPOSIS
 
@@ -87,20 +88,6 @@ Moose::Autobox - Ruby ain't got nothin on us
   
   print 'Print squares from 1 to 10 : ';
   print [ 1 .. 10 ]->map(sub { $_ * $_ })->join(', ');
-
-=head1 CAVEAT
-
-First, a warning.
-
-This module is very very very very very very very experimental. It 
-makes use of a very experimental module (L<autobox>) and uses some 
-shiney new technology (L<Moose::Role>) to accomplish it's goals.
-
-Use this at your own risk. If it breaks the lamp in the living room
-and your mother yells at you, don't come complaining to me.
-
-Also, as this is so experimental, it's API should not be considered 
-to be stable. It could very well change in radical ways.
 
 =head1 DESCRIPTION
 
@@ -122,10 +109,12 @@ the 'hooks' for others to add implementation too.
 
 =head2 Is this for real? or just play?
 
-My intent is to try and make this module as production worthy as 
-possible. This may or may not be possible, depending on how well 
-L<autobox> works out. At this point, I have high hopes for things
-but only time (and more tests and code) will tell.
+Several people are using this module in serious applications and 
+it seems to be quite stable. The underlying technologies of L<autobox>
+and L<Moose::Role> are also considered stable. There is some performance
+hit, but as I am fond of saying, nothing in life is free. If you have 
+any questions regarding this module, either email me, or stop by #moose
+on irc.perl.org and ask around.
 
 =head1 METHODS
 
@@ -171,7 +160,7 @@ renormalist
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2006-2007 by Infinity Interactive, Inc.
+Copyright 2006-2008 by Infinity Interactive, Inc.
 
 L<http://www.iinteractive.com>
 

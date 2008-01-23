@@ -7,8 +7,8 @@ my $build = Module::Build->new(
     license => 'perl',
     requires => {
         'autobox'         => '1.03',
-        'Moose'           => '0.35',
-        'Perl6::Junction' => '1.10',
+        'Moose'           => '0.34',
+        'Perl6::Junction' => '1.22',
     },
     optional => {
     },
