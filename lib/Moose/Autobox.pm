@@ -8,7 +8,7 @@ use Carp        qw(confess);
 use Scalar::Util ();
 use Moose::Util  ();
 
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 use base 'autobox';
 
@@ -115,6 +115,21 @@ and L<Moose::Role> are also considered stable. There is some performance
 hit, but as I am fond of saying, nothing in life is free. If you have 
 any questions regarding this module, either email me, or stop by #moose
 on irc.perl.org and ask around.
+
+=head2 Adding additional methods
+
+B<Moose::Autobox> asks L<autobox> to use the B<Moose::Autobox::*> namespace 
+prefix so as to avoid stepping on the toes of other L<autobox> modules. This 
+means that if you want to add methods to a particular perl type 
+(i.e. - monkeypatch), then you must do this:
+
+  sub Moose::Autobox::SCALAR::bar { 42 }
+
+instead of this:
+
+  sub SCALAR::bar { 42 
+
+as you would with vanilla autobox.
 
 =head1 METHODS
 
