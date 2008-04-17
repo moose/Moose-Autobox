@@ -4,6 +4,11 @@ Revision history for Perl extension Moose::Autobox
     * Moose::Autobox
       - added documentation about how to extend the autoboxed
         types (RT #34315)
+    
+    * Moose::Autobox::Hash
+      Moose::Autobox::Indexed
+      - added support for slice and hslice (jrockway)
+        - added tests for this
 
 0.06 Tues. Jan. 22, 2008
     ~~ updated copyright dates & some docs ~~   
