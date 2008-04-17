@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 63;
+use Test::More tests => 64;
 
 BEGIN {
     use_ok('Moose::Autobox');
@@ -247,3 +247,7 @@ is( $h->dump,
 is_deeply( { one => 1, two => 2, three => 3 }->slice([qw/three one/]),
            [ qw/3 1/ ],
            '... hash slices ok' );
+
+is_deeply( { one => 1, two => 2, three => 3 }->hslice([qw/two three/]),
+           { two => 2, three => 3 },
+           '... hash hslices ok' );
