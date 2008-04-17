@@ -9,6 +9,7 @@ requires 'exists';
 requires 'keys';
 requires 'values'; 
 requires 'kv';
+requires 'slice';
 
 1;
 

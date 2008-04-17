@@ -3,7 +3,7 @@ use Moose::Role 'with';
 
 use Carp qw(croak);
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 with 'Moose::Autobox::Ref',
      'Moose::Autobox::Indexed';
@@ -51,6 +51,11 @@ sub kv {
     my ($hash) = @_;    
     [ CORE::map { [ $_, $hash->{$_} ] } CORE::keys %$hash ];    
 }
+
+sub slice {
+    my ($hash, $keys) = @_;
+    return [ @{$hash}{@$keys} ];
+};
 
 sub print   { CORE::print %{$_[0]} }
 sub say     { CORE::print %{$_[0]}, "\n" }
@@ -103,6 +108,8 @@ shallow merging.
 =item B<values>
 
 =item B<kv>
+
+=item B<slice>
 
 =back
 
