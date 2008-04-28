@@ -1,6 +1,6 @@
 Revision history for Perl extension Moose::Autobox
 
-0.07
+0.07 Mon. April 28, 2008
     * Moose::Autobox
       - added documentation about how to extend the autoboxed
         types (RT #34315)

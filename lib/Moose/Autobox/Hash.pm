@@ -1,8 +1,6 @@
 package Moose::Autobox::Hash;
 use Moose::Role 'with';
 
-use Carp qw(croak);
-
 our $VERSION = '0.03';
 
 with 'Moose::Autobox::Ref',
@@ -15,7 +13,7 @@ sub delete {
 
 sub merge {
     my ($left, $right) = @_;
-    croak "You must pass a hashref as argument to merge"
+    Carp::confess "You must pass a hashref as argument to merge"
         unless ref $right eq 'HASH';
     return { %$left, %$right };
 }
