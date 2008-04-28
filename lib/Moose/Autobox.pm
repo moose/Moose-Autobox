@@ -127,7 +127,7 @@ means that if you want to add methods to a particular perl type
 
 instead of this:
 
-  sub SCALAR::bar { 42 
+  sub SCALAR::bar { 42 }
 
 as you would with vanilla autobox.
 
