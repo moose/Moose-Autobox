@@ -1,5 +1,10 @@
 Revision history for Perl extension Moose::Autobox
 
+0.08
+    - upped the dependency on autobox from 1.22 to 2.23
+      at the suggestion of chocolateboy
+    - might as well up the Moose dependency too.
+
 0.07 Mon. April 28, 2008
     ~~ no more Module::Build, thanks mst ~~
 
