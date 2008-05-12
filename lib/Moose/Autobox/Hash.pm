@@ -23,6 +23,10 @@ sub hslice {
     return { map { $_ => $hash->{$_} } @$keys };
 }
 
+sub flatten {
+    return %{$_[0]}
+}
+
 # ::Indexed implementation
 
 sub at {
@@ -97,6 +101,8 @@ shallow merging.
 =item B<hslice>
 
 Slices a hash but returns the keys and values as a new hashref.
+
+=item B<flatten>
 
 =back
 

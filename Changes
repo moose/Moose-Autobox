@@ -1,6 +1,7 @@
 Revision history for Perl extension Moose::Autobox
 
 0.08
+    - add flatten method to Array and Hash
     - upped the dependency on autobox from 1.22 to 2.23
       at the suggestion of chocolateboy
     - might as well up the Moose dependency too.

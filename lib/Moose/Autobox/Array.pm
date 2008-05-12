@@ -117,6 +117,10 @@ sub kv {
     $array->keys->map(sub { [ $_, $array->[$_] ] });
 }
 
+sub flatten {
+    @{$_[0]}
+}
+
 ## Junctions
 
 sub all {
@@ -189,6 +193,8 @@ This is a role to describe operations on the Array type.
 =item B<sprintf ($format_string)>
 
 =item B<slice (@indices)>
+
+=item B<flatten>
 
 =back
 
