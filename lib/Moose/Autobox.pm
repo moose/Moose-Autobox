@@ -1,6 +1,6 @@
 
 package Moose::Autobox;
-
+use 5.006;
 use strict;
 use warnings;
 

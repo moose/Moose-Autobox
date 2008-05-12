@@ -5,6 +5,7 @@ examples/units/time.pl
 inc/Module/Install.pm
 inc/Module/Install/Base.pm
 inc/Module/Install/Can.pm
+inc/Module/Install/ExtraTests.pm
 inc/Module/Install/Fetch.pm
 inc/Module/Install/Makefile.pm
 inc/Module/Install/Metadata.pm
@@ -25,7 +26,7 @@ lib/Moose/Autobox/String.pm
 lib/Moose/Autobox/Undef.pm
 lib/Moose/Autobox/Value.pm
 Makefile.PL
-MANIFEST
+MANIFEST			This list of files
 META.yml
 README
 t/000_load.t
@@ -36,5 +37,6 @@ t/004_list_compressions.t
 t/005_string.t
 t/006_y_combinator.t
 t/007_base.t
-t/pod.t
-t/pod_coverage.t
+t/008_flatten.t
+xt/release/pod.t
+xt/release/pod_coverage.t

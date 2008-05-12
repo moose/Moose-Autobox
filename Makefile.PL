@@ -13,5 +13,6 @@ test_requires 'Test::More'      => '0.62';
 test_requires 'Test::Exception' => '0.21';
 
 tests_recursive;
+extra_tests;
 
 WriteAll;
