@@ -1,5 +1,7 @@
 Revision history for Perl extension Moose::Autobox
 
+    - update Perl6::Junction dependency and support new version
+
 0.08 Mon. May 12, 2008
     - add flatten method to Array and Hash
     - upped the dependency on autobox from 1.22 to 2.23

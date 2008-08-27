@@ -125,22 +125,22 @@ sub flatten {
 
 sub all {
     my ($array) = @_;     
-    return Perl6::Junction::All->all(@$array);
+    return Perl6::Junction::All->new(@$array);
 }
 
 sub any {
     my ($array) = @_;     
-    return Perl6::Junction::Any->any(@$array);
+    return Perl6::Junction::Any->new(@$array);
 }
 
 sub none {
     my ($array) = @_;     
-    return Perl6::Junction::None->none(@$array);
+    return Perl6::Junction::None->new(@$array);
 }
 
 sub one {
     my ($array) = @_; 
-    return Perl6::Junction::One->one(@$array);
+    return Perl6::Junction::One->new(@$array);
 }
 
 ## Print
