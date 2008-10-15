@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 68;
+use Test::More tests => 69;
 
 BEGIN {
     use_ok('Moose::Autobox');
@@ -74,6 +74,10 @@ $a->map(sub { $_ + 2 }),
 '... got the right return value for map');
 
 is_deeply($a, [ 4, 2, 6, 78, 101, 2, 3 ], '... original value is unchanged');
+
+my $b = [1, 2, 3];
+$b->map(sub { $_++ } );
+is_deeply($b, [ 2, 3, 4 ], '... original value is changed');
 
 is_deeply(
 $a->reverse(),
