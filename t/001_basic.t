@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 69;
+use Test::More tests => 70;
 
 BEGIN {
     use_ok('Moose::Autobox');
@@ -23,6 +23,9 @@ ok($s->defined, '... got a defined value');
 
 eval $s->dump;
 is($VAR1, 5 , '... eval of SCALAR->dump works');
+
+eval $s->flatten;
+is($VAR1, 5 , '... eval of SCALAR->flatten works');
 
 eval $s->perl;
 is($s->perl, $s->dump, '... SCALAR->dump equals SCALAR->perl');

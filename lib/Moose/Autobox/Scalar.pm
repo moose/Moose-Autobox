@@ -5,7 +5,8 @@ our $VERSION = '0.01';
 
 with 'Moose::Autobox::String',
      'Moose::Autobox::Number';     
-     
+
+sub flatten { $_[0] }
 sub print { CORE::print $_[0] }
 sub say   { CORE::print $_[0], "\n" }
 1;
@@ -32,6 +33,15 @@ as the combination (union sort of) of a String and a Number.
 =item B<print>
 
 =item B<say>
+
+=item B<flatten>
+
+Flattening a scalar just returns the scalar.  This means that you can say:
+
+  my @array = $input->flatten;
+
+  # Given $input of 5, @array is (5);
+  # Given $input of [ 5, 2, 0], @array is (5, 2, 0)
 
 =back
 
