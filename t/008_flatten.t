@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 4;
+use Test::More tests => 9;
 use Moose::Autobox;
 
 my $array = [ qw(1 2 3 4 ) ];
@@ -32,4 +32,35 @@ is_deeply(
   [ $scalar_ref->flatten ],
   [ \$scalar ],
   "flattening a reference to a scalar returns the same scalar reference",
+);
+
+# flatten_deep on array
+is_deeply(
+  [ 1 .. 9 ]->flatten_deep,
+  [ 1 .. 9 ],
+ "default flatten_deep on shallow array returns correct array"
+);
+
+is_deeply(
+  [ [ 1 .. 3 ], [[ 4 .. 6 ]], [[[ 7 .. 9 ]]] ]->flatten_deep,
+  [ 1 .. 9 ],
+  "default flatten_deep on array with depth completely flattens array"
+);
+
+is_deeply(
+  [ [ 1 .. 3 ], [[ 4 .. 6 ]], [[[ 7 .. 9 ]]] ]->flatten_deep(undef),
+  [ 1 .. 9 ],
+  "flatten_deep with an undef argument on array with depth completely flattens array"
+);
+
+is_deeply(
+  [ [ 1 .. 3 ], [[ 4 .. 6 ]], [[[ 7 .. 9 ]]] ]->flatten_deep(0),
+  [ [ 1 .. 3 ], [[ 4 .. 6 ]], [[[ 7 .. 9 ]]] ],
+  "flatten_deep with depth 0 specified on array returns array unchanged"
+);
+
+is_deeply(
+  [ [ 1 .. 3 ], [[ 4 .. 6 ]], [[[ 7 .. 9 ]]] ]->flatten_deep(2),
+  [ 1 .. 6, [ 7 .. 9 ] ],
+  "flatten_deep with depth specified returns correct array"
 );

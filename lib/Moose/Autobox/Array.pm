@@ -121,6 +121,24 @@ sub flatten {
     @{$_[0]}
 }
 
+sub _flatten_deep { 
+	my @array = @_;
+	my $depth = CORE::pop @array;
+	--$depth if (defined($depth));
+	
+	CORE::map {
+		(ref eq 'ARRAY')
+			? (defined($depth) && $depth == -1) ? $_ : _flatten_deep( @$_, $depth )
+			: $_
+	} @array;
+
+}
+
+sub flatten_deep { 
+	my ($array, $depth) = @_;	
+	[ _flatten_deep(@$array, $depth) ];
+}
+
 ## Junctions
 
 sub all {
@@ -195,6 +213,8 @@ This is a role to describe operations on the Array type.
 =item B<slice (@indices)>
 
 =item B<flatten>
+
+=item B<flatten_deep ($depth)>
 
 =back
 
