@@ -1,5 +1,6 @@
 Revision history for Perl extension Moose::Autobox
 
+0.09 Thu. Oct 23, 2008
     - update Perl6::Junction dependency and support new version
 
 0.08 Mon. May 12, 2008
