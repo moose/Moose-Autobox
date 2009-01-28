@@ -15,8 +15,8 @@ sub chomp   { CORE::chomp   $_[0] }
 sub chop    { CORE::chop    $_[0] }
 sub reverse { CORE::reverse $_[0] }
 sub length  { CORE::length  $_[0] }
-sub lines   { CORE::split '\n', $_[0] }
-sub words   { CORE::split ' ',  $_[0] }
+sub lines   { [ CORE::split '\n', $_[0] ] }
+sub words   { [ CORE::split ' ',  $_[0] ] }
 sub index   { 
     return CORE::index($_[0], $_[1]) if scalar @_ == 2;
     return CORE::index($_[0], $_[1], $_[2]);
@@ -26,8 +26,8 @@ sub rindex  {
     return CORE::rindex($_[0], $_[1], $_[2]);
 }
 sub split   {
-    return CORE::split($_[1], $_[0]) if scalar @_ == 2;
-    return CORE::split($_[1], $_[0], $_[2]);
+    return [ CORE::split($_[1], $_[0]) ] if scalar @_ == 2;
+    return [ CORE::split($_[1], $_[0], $_[2]) ];
 }
 
 1;

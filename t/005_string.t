@@ -47,9 +47,9 @@ is('Hello World, Hello'->rindex('Hello'), 13, '... got the correct right index')
 
 is('Hello World, Hello'->rindex('Hello', 6), 0, '... got the correct right index');
 
-is_deeply(['/foo/bar/baz'->split('/')], ['', 'foo', 'bar', 'baz'], '... got the correct fragments');
-is_deeply(['Hello World'->words], ['Hello', 'World'], '... got the correct words');
-is_deeply(["Hello\nWor\n\nld\n"->lines], ['Hello', 'Wor', '', 'ld'], '... got the correct lines');
+is_deeply('/foo/bar/baz'->split('/'), ['', 'foo', 'bar', 'baz'], '... got the correct fragments');
+is_deeply('Hello World'->words, ['Hello', 'World'], '... got the correct words');
+is_deeply("Hello\nWor\n\nld\n"->lines, ['Hello', 'Wor', '', 'ld'], '... got the correct lines');
 
 eval 'Hello World, Hello'->dump;
 is($VAR1, 'Hello World, Hello' , '... eval of &dump works');
