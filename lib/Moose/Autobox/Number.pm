@@ -1,10 +1,15 @@
 package Moose::Autobox::Number;
 use Moose::Role;
 
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 
 with 'Moose::Autobox::Value';
-     
+
+sub to {
+    return [ $_[0] .. $_[1] ] if $_[0] <= $_[1];
+    return [ reverse $_[1] .. $_[0] ];
+}
+
 1;
 
 __END__
@@ -20,6 +25,21 @@ Moose::Autobox::Number - the Number role
 This is a role to describes a Numeric value. 
 
 =head1 METHODS
+
+=over 4
+
+=item B<to>
+
+Takes another number as argument and produces an array ranging from
+the number the method is called on to the number given as argument. In
+some situation, this method intentionally behaves different from the
+range operator in perl:
+
+  $foo = [ 5 .. 1 ]; # $foo is []
+
+  $foo = 5->to(1);   # $foo is [ 5, 4, 3, 2, 1 ]
+
+=back
 
 =over 4
 
