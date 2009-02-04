@@ -32,7 +32,7 @@ This is a role to describes a Numeric value.
 
 Takes another number as argument and produces an array ranging from
 the number the method is called on to the number given as argument. In
-some situation, this method intentionally behaves different from the
+some situations, this method intentionally behaves different from the
 range operator in perl:
 
   $foo = [ 5 .. 1 ]; # $foo is []
