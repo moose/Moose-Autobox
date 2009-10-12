@@ -253,6 +253,12 @@ This is a role to describe operations on the Array type.
 
 =item B<kv>
 
+=item B<each>
+
+=item B<each_key>
+
+=item B<each_value>
+
 =back
 
 =head2 List implementation

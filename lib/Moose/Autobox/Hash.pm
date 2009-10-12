@@ -144,6 +144,12 @@ Slices a hash but returns the keys and values as a new hashref.
 
 =item B<slice>
 
+=item B<each>
+
+=item B<each_key>
+
+=item B<each_value>
+
 =back
 
 =over 4

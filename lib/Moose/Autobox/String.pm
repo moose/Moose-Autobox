@@ -74,6 +74,18 @@ This is a role to describes a String value.
 
 =item B<ucfirst>
 
+=item B<split>
+
+  $string->split($pattern);
+
+=item B<words>
+
+This is equivalent to splitting on space.
+
+=item B<lines>
+
+This is equivalent to splitting on linelines.
+
 =back
 
 =over 4
