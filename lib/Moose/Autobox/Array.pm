@@ -126,9 +126,7 @@ sub each {
 
 sub each_key {
     my ($array, $sub) = @_;
-    for my $i (0 .. $#$array) {
-      $sub->($i);
-    }
+    $sub->($_) for (0 .. $#$array);
 }
 
 sub each_value {
