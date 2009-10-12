@@ -62,7 +62,27 @@ sub kv {
 sub slice {
     my ($hash, $keys) = @_;
     return [ @{$hash}{@$keys} ];
-};
+}
+
+sub each {
+    my ($hash, $sub) = @_;
+    for my $key (CORE::keys %$hash) {
+      $sub->($key, $hash->{$key});
+    }
+}
+
+sub each_key {
+    my ($hash, $sub) = @_;
+    $sub->($_) for CORE::keys %$hash;
+}
+
+sub each_value {
+    my ($hash, $sub) = @_;
+    $sub->($_) for CORE::values %$hash;
+}
+
+
+# End Indexed
 
 sub print   { CORE::print %{$_[0]} }
 sub say     { CORE::print %{$_[0]}, "\n" }

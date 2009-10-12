@@ -117,6 +117,27 @@ sub kv {
     $array->keys->map(sub { [ $_, $array->[$_] ] });
 }
 
+sub each {
+    my ($array, $sub) = @_;
+    for my $i (0 .. $#$array) {
+      $sub->($i, $array->[ $i ]);
+    }
+}
+
+sub each_key {
+    my ($array, $sub) = @_;
+    for my $i (0 .. $#$array) {
+      $sub->($i);
+    }
+}
+
+sub each_value {
+    my ($array, $sub) = @_;
+    $sub->($_) for @$array;
+}
+
+# end indexed
+
 sub flatten {
     @{$_[0]}
 }

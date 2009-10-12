@@ -10,6 +10,7 @@ requires 'keys';
 requires 'values'; 
 requires 'kv';
 requires 'slice';
+requires qw(each each_key each_value);
 
 1;
 
@@ -53,6 +54,14 @@ and L<Moose::Autobox::Hash> implement this role.
 =item B<values>
 
 =item B<kv>
+
+=item B<slice>
+
+=item B<each>
+
+=item B<each_key>
+
+=item B<each_value>
 
 =back
 
