@@ -1,6 +1,7 @@
 Revision history for Perl extension Moose::Autobox
 
 0.10
+    - add each, each_key, each_value to Indexed (array and hash) (rjbs)
     - add split, words, lines to String (Sartak)
     - add 'to' to Number (Debolaz)
 

@@ -3,7 +3,7 @@ use Moose::Role 'with';
 use Perl6::Junction;
 use Moose::Autobox;
 
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 
 with 'Moose::Autobox::Ref',
      'Moose::Autobox::List',

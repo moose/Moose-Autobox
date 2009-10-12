@@ -8,7 +8,7 @@ use Carp        qw(confess);
 use Scalar::Util ();
 use Moose::Util  ();
 
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 
 use base 'autobox';
 
