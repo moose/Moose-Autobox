@@ -134,6 +134,17 @@ sub each_value {
     $sub->($_) for @$array;
 }
 
+sub each_n {
+    my ($array, $n, $sub) = @_;
+    my $it = List::MoreUtils::natatime($n, @$array);
+
+    while (my @vals = $it->()) {
+        $sub->(@vals);
+    }
+
+    return;
+}
+
 # end indexed
 
 sub flatten {
@@ -234,6 +245,8 @@ This is a role to describe operations on the Array type.
 =item B<flatten>
 
 =item B<flatten_deep ($depth)>
+
+=item B<each_n ($n, $callback)>
 
 =back
 
