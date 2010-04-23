@@ -85,6 +85,14 @@ sub sort {
     [ CORE::sort { $sub->($a, $b) } @$array ]; 
 }    
 
+sub first {
+    $_[0]->[0];
+}
+
+sub last {
+    $_[0]->[$#{$_[0]}];
+}
+
 ## ::Indexed implementation
 
 sub at {
@@ -246,7 +254,9 @@ This is a role to describe operations on the Array type.
 
 =item B<flatten_deep ($depth)>
 
-=item B<each_n_values ($n, $callback)>
+=item B<first>
+
+=item B<last>
 
 =back
 
@@ -271,6 +281,8 @@ This is a role to describe operations on the Array type.
 =item B<each_key>
 
 =item B<each_value>
+
+=item B<each_n_values ($n, $callback)>
 
 =back
 
