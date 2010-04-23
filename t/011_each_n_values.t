@@ -11,7 +11,7 @@ use Moose::Autobox;
 
     {
         my @vals;
-        @array->each_n(2, sub { push @vals, [@_] });
+        @array->each_n_values(2, sub { push @vals, [@_] });
         is(scalar @vals, 13);
         is(scalar @$_, 2) for @vals;
         is_deeply(@vals->map(sub { @{ $_ } }), [@array]);
@@ -19,7 +19,7 @@ use Moose::Autobox;
 
     {
         my @vals;
-        $aref->each_n(2, sub { push @vals, [@_] });
+        $aref->each_n_values(2, sub { push @vals, [@_] });
         is(scalar @vals, 13);
         is(scalar @$_, 2) for @vals;
         is_deeply(@vals->map(sub { @{ $_ } }), $aref);

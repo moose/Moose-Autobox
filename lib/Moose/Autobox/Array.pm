@@ -134,7 +134,7 @@ sub each_value {
     $sub->($_) for @$array;
 }
 
-sub each_n {
+sub each_n_values {
     my ($array, $n, $sub) = @_;
     my $it = List::MoreUtils::natatime($n, @$array);
 
@@ -246,7 +246,7 @@ This is a role to describe operations on the Array type.
 
 =item B<flatten_deep ($depth)>
 
-=item B<each_n ($n, $callback)>
+=item B<each_n_values ($n, $callback)>
 
 =back
 
