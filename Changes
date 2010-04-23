@@ -1,10 +1,10 @@
 Revision history for Perl extension Moose::Autobox
 
-0.11
+0.11  Fri. Mar 23, 2010
     - add each_n_values to Indexed (rafl and rjbs)
     - add first and last to Scalar and Array (t0m)
 
-0.10
+0.10  Mon. Oct 12 2009
     - add each, each_key, each_value to Indexed (array and hash) (rjbs)
     - add split, words, lines to String (Sartak)
     - add 'to' to Number (Debolaz)
