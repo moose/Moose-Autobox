@@ -81,6 +81,18 @@ sub each_value {
     $sub->($_) for CORE::values %$hash;
 }
 
+sub each_n_values {
+    my ($hash, $n, $sub) = @_;
+    my @keys = CORE::keys %$hash;
+    my $it = List::MoreUtils::natatime($n, @keys);
+
+    while (my @vals = $it->()) {
+        $sub->(@$hash{ @vals });
+    }
+
+    return;
+}
+
 
 # End Indexed
 

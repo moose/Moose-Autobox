@@ -26,4 +26,28 @@ use Moose::Autobox;
     }
 }
 
+{
+    my %hash = (a => 1, b => 2, c => 3, d => 4);
+
+    my $href = { %hash };
+
+    {
+        my @vals;
+        %hash->each_n_values(2, sub { push @vals, [@_] });
+        my %seen;
+        is(@vals, 2);
+        for my $pair (@vals) { $seen{$_}++ for @$pair }
+        is_deeply(\%seen, { 1,1,2,1,3,1,4,1 });
+    }
+
+    {
+        my @vals;
+        $href->each_n_values(2, sub { push @vals, [@_] });
+        my %seen;
+        is(@vals, 2);
+        for my $pair (@vals) { $seen{$_}++ for @$pair }
+        is_deeply(\%seen, { 1,1,2,1,3,1,4,1 });
+    }
+}
+
 done_testing;
