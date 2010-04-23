@@ -162,6 +162,8 @@ Slices a hash but returns the keys and values as a new hashref.
 
 =item B<each_value>
 
+=item B<each_n_values>
+
 =back
 
 =over 4

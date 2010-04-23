@@ -45,8 +45,6 @@ Flattening a scalar just returns the scalar.  This means that you can say:
   # Given $input of 5, @array is (5);
   # Given $input of [ 5, 2, 0], @array is (5, 2, 0)
 
-=back
-
 =item B<first>
 
 As per flatten.
@@ -54,6 +52,8 @@ As per flatten.
 =item B<last>
 
 As per flatten.
+
+=back
 
 =head1 BUGS
 
