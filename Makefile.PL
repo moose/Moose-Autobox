@@ -1,7 +1,6 @@
 use strict;
 use warnings;
 use inc::Module::Install;
-use Module::Install::ExtraTests;
 
 name('Moose-Autobox');
 all_from('lib/Moose/Autobox.pm');
