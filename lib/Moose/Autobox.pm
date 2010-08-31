@@ -112,9 +112,12 @@ the 'hooks' for others to add implementation too.
 Several people are using this module in serious applications and 
 it seems to be quite stable. The underlying technologies of L<autobox>
 and L<Moose::Role> are also considered stable. There is some performance
-hit, but as I am fond of saying, nothing in life is free. If you have 
-any questions regarding this module, either email me, or stop by #moose
-on irc.perl.org and ask around.
+hit, but as I am fond of saying, nothing in life is free.  Note that this hit
+only applies to the I<use> of methods on native Perl values, not the mere act
+of loading this module in your namespace.
+
+If you have any questions regarding this module, either email me, or stop by
+#moose on irc.perl.org and ask around.
 
 =head2 Adding additional methods
 
