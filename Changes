@@ -1,5 +1,8 @@
 Revision history for Perl extension Moose::Autobox
 
+0.12  Tue. Mar 20, 2012
+    - replace "use base" with "use parent"
+
 0.11  Fri. Mar 23, 2010
     - add each_n_values to Indexed (rafl and rjbs)
     - add first and last to Scalar and Array (t0m)

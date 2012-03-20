@@ -1,7 +1,7 @@
 package Moose::Autobox::Ref;     
 use Moose::Role 'with';
 
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 
 with 'Moose::Autobox::Defined';
 

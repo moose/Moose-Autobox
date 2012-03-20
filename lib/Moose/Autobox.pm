@@ -8,9 +8,9 @@ use Carp        qw(confess);
 use Scalar::Util ();
 use Moose::Util  ();
 
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 
-use base 'autobox';
+use parent 'autobox';
 
 use Moose::Autobox::Undef;
 
