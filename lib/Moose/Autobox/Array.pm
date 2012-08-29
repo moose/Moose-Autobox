@@ -1,7 +1,11 @@
 package Moose::Autobox::Array;
 use Moose::Role 'with';
-use Perl6::Junction;
 use Moose::Autobox;
+
+use Syntax::Keyword::Junction::All ();
+use Syntax::Keyword::Junction::Any ();
+use Syntax::Keyword::Junction::None ();
+use Syntax::Keyword::Junction::One ();
 
 our $VERSION = '0.12';
 
@@ -181,28 +185,30 @@ sub flatten_deep {
 
 sub all {
     my ($array) = @_;     
-    return Perl6::Junction::all(@$array);
+    return Syntax::Keyword::Junction::All->new(@$array);
 }
 
 sub any {
     my ($array) = @_;     
-    return Perl6::Junction::any(@$array);
+    return Syntax::Keyword::Junction::Any->new(@$array);
 }
 
 sub none {
     my ($array) = @_;     
-    return Perl6::Junction::none(@$array);
+    return Syntax::Keyword::Junction::None->new(@$array);
 }
 
 sub one {
     my ($array) = @_; 
-    return Perl6::Junction::one(@$array);
+    return Syntax::Keyword::Junction::One->new(@$array);
 }
 
 ## Print
 
 sub print { CORE::print @{$_[0]} }
 sub say   { CORE::print @{$_[0]}, "\n" }
+
+no Moose::Role;
 
 1;
 

@@ -10,7 +10,7 @@ all_from('lib/Moose/Autobox.pm');
 requires 'autobox'         => '2.23';
 requires 'parent'          => 0;
 requires 'Moose'           => '0.42';
-requires 'Perl6::Junction' => '1.40000';
+requires 'Syntax::Keyword::Junction' => 0;
 
 test_requires 'Test::More'      => '0.89';
 test_requires 'Test::Exception' => '0.21';
