@@ -1,7 +1,7 @@
 package Moose::Autobox::Indexed;     
 use Moose::Role 'requires';
 
-our $VERSION = '0.12';
+our $VERSION = '0.13';
 
 requires 'at';
 requires 'put';

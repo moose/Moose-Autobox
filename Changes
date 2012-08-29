@@ -1,5 +1,8 @@
 Revision history for Perl extension Moose::Autobox
 
+0.13  Wed Aug 29 09:56:58 EDT 2012
+    - switch from Perl6::Junction to Syntax::Keyword::Junction (rjbs)
+
 0.12  Tue. Mar 20, 2012
     - replace "use base" with "use parent"
 
