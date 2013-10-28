@@ -1,7 +1,7 @@
 package Moose::Autobox::Scalar;
 use Moose::Role 'with';
 
-our $VERSION = '0.13';
+our $VERSION = '0.14';
 
 with 'Moose::Autobox::String',
      'Moose::Autobox::Number';     
