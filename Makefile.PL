@@ -21,6 +21,9 @@ WriteMakefile(
   },
   META_MERGE        => {
     "meta-spec" => { version => 2 },
+    bugtracker => {
+      web => "https://github.com/moose/Moose-Autobox/issues",
+    },
     resources => {
       repository => {
         type => 'git',
