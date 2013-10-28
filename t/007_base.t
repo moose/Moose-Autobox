@@ -3,9 +3,9 @@
 use strict;
 use warnings;
 
-use Test::More tests => 5;
+use Test::More tests => 4;
 
-use_ok("Moose::Autobox");
+use Moose::Autobox ();
 
 foreach my $stem (qw(SCALAR ARRAY HASH CODE)) {
   my $class = "Moose::Autobox::${stem}";

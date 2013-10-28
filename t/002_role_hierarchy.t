@@ -3,11 +3,9 @@
 use strict;
 use warnings;
 
-use Test::More tests => 22;
+use Test::More tests => 21;
 
-BEGIN {
-    use_ok('Moose::Autobox');
-}
+use Moose::Autobox;
 
 ok(Moose::Autobox::SCALAR->does('Moose::Autobox::Scalar'),           '... SCALAR does Moose::Autobox::Scalar');
   ok(Moose::Autobox::SCALAR->does('Moose::Autobox::String'),         '... SCALAR does Moose::Autobox::String');

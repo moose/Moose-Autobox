@@ -3,12 +3,10 @@
 use strict;
 use warnings;
 
-use Test::More tests => 8;
+use Test::More tests => 7;
 use Test::Exception;
 
-BEGIN {
-    use_ok('Moose::Autobox');
-}
+require Moose::Autobox;
 
 =pod
 

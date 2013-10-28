@@ -3,11 +3,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 70;
-
-BEGIN {
-    use_ok('Moose::Autobox');
-}
+use Test::More tests => 69;
 
 use Moose::Autobox;
 
