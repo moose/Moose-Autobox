@@ -19,3 +19,4 @@ cover_db
 ^\.#
 ^TODO$
 Moose-Autobox-*
+^MYMETA
