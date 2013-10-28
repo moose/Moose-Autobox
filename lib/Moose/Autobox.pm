@@ -140,7 +140,7 @@ as you would with vanilla autobox.
 
 =item B<mixin_additional_role ($type, $role)>
 
-This will mixin an additonal C<$role> into a certain C<$type>. The 
+This will mixin an additional C<$role> into a certain C<$type>. The 
 types can be SCALAR, ARRAY, HASH or CODE.
 
 This can be used to add additional methods to the types, see the 
