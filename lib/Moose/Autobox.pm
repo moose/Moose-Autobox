@@ -30,7 +30,8 @@ sub mixin_additional_role {
 
 {
                         
-    package Moose::Autobox::SCALAR;
+    package
+      Moose::Autobox::SCALAR;
 
     use Moose::Autobox::Scalar;
 
@@ -40,7 +41,8 @@ sub mixin_additional_role {
 
     *does = \&Moose::Object::does;
 
-    package Moose::Autobox::ARRAY;
+    package
+      Moose::Autobox::ARRAY;
 
     use Moose::Autobox::Array;
 
@@ -50,7 +52,8 @@ sub mixin_additional_role {
 
     *does = \&Moose::Object::does;
 
-    package Moose::Autobox::HASH;
+    package
+      Moose::Autobox::HASH;
 
     use Moose::Autobox::Hash;
 
@@ -60,7 +63,8 @@ sub mixin_additional_role {
 
     *does = \&Moose::Object::does;
 
-    package Moose::Autobox::CODE;
+    package
+      Moose::Autobox::CODE;
 
     use Moose::Autobox::Code;
 
