@@ -1,7 +1,7 @@
 package Moose::Autobox::String;
 use Moose::Role;
 
-our $VERSION = '0.14';
+our $VERSION = '0.15';
 
 with 'Moose::Autobox::Value';
 

@@ -1,5 +1,9 @@
 Revision history for Perl extension Moose::Autobox
 
+0.15  Sun Oct 27 21:59:43 EDT 2013
+    - hide internal packages from PAUSE
+    - point repo/bugtracker at GitHub
+
 0.14  Sun Oct 27 21:59:43 EDT 2013
     - typo fixes (dsteinbrunner)
     - repackage to drop MYMETA files
