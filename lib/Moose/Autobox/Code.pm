@@ -1,6 +1,6 @@
 package Moose::Autobox::Code;
 # ABSTRACT: the Code role
-use Moose::Role 'with';
+use Moo::Role 'with';
 use Moose::Autobox;
 use namespace::autoclean;
 

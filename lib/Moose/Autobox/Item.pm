@@ -1,6 +1,6 @@
 package Moose::Autobox::Item;
 # ABSTRACT: the Item role
-use Moose::Role 'requires';
+use Moo::Role 'requires';
 use namespace::autoclean;
 
 our $VERSION = '0.16';
