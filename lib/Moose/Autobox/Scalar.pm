@@ -4,7 +4,7 @@ use Moose::Role 'with';
 our $VERSION = '0.16';
 
 with 'Moose::Autobox::String',
-     'Moose::Autobox::Number';     
+     'Moose::Autobox::Number';
 
 sub flatten { $_[0] }
 sub first { $_[0] }
@@ -17,13 +17,13 @@ __END__
 
 =pod
 
-=head1 NAME 
+=head1 NAME
 
 Moose::Autobox::Scalar - the Scalar role
 
 =head1 DESCRIPTION
 
-This is a role to describes a Scalar value, which is defined 
+This is a role to describes a Scalar value, which is defined
 as the combination (union sort of) of a String and a Number.
 
 =head1 METHODS
@@ -57,7 +57,7 @@ As per flatten.
 
 =head1 BUGS
 
-All complex software has bugs lurking in it, and this module is no 
+All complex software has bugs lurking in it, and this module is no
 exception. If you find a bug please either email me, or add the bug
 to cpan-RT.
 

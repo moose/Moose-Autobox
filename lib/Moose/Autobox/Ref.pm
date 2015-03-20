@@ -1,4 +1,4 @@
-package Moose::Autobox::Ref;     
+package Moose::Autobox::Ref;
 use Moose::Role 'with';
 
 our $VERSION = '0.16';
@@ -11,13 +11,13 @@ __END__
 
 =pod
 
-=head1 NAME 
+=head1 NAME
 
 Moose::Autobox::Ref - the Ref role
 
 =head1 DESCRIPTION
 
-This is a role to describes a reference value. 
+This is a role to describes a reference value.
 
 =head1 METHODS
 
@@ -29,7 +29,7 @@ This is a role to describes a reference value.
 
 =head1 BUGS
 
-All complex software has bugs lurking in it, and this module is no 
+All complex software has bugs lurking in it, and this module is no
 exception. If you find a bug please either email me, or add the bug
 to cpan-RT.
 

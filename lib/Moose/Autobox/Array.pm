@@ -12,43 +12,43 @@ our $VERSION = '0.16';
 with 'Moose::Autobox::Ref',
      'Moose::Autobox::List',
      'Moose::Autobox::Indexed';
-    
+
 ## Array Interface
 
-sub pop { 
-    my ($array) = @_;    
-    CORE::pop @$array; 
+sub pop {
+    my ($array) = @_;
+    CORE::pop @$array;
 }
 
-sub push { 
+sub push {
     my ($array, @rest) = @_;
-    CORE::push @$array, @rest;  
-    $array; 
+    CORE::push @$array, @rest;
+    $array;
 }
 
-sub unshift { 
-    my ($array, @rest) = @_;    
-    CORE::unshift @$array, @rest; 
-    $array; 
+sub unshift {
+    my ($array, @rest) = @_;
+    CORE::unshift @$array, @rest;
+    $array;
 }
 
-sub delete { 
-    my ($array, $index) = @_;    
+sub delete {
+    my ($array, $index) = @_;
     CORE::delete $array->[$index];
 }
 
-sub shift { 
-    my ($array) = @_;    
-    CORE::shift @$array; 
-}    
+sub shift {
+    my ($array) = @_;
+    CORE::shift @$array;
+}
 
 sub slice {
     my ($array, $indicies) = @_;
     [ @{$array}[ @{$indicies} ] ];
-} 
+}
 
-# NOTE: 
-# sprintf args need to be reversed, 
+# NOTE:
+# sprintf args need to be reversed,
 # because the invocant is the array
 sub sprintf { CORE::sprintf $_[1], @{$_[0]} }
 
@@ -56,38 +56,38 @@ sub sprintf { CORE::sprintf $_[1], @{$_[0]} }
 
 sub head { $_[0]->[0] }
 sub tail { [ @{$_[0]}[ 1 .. $#{$_[0]} ] ] }
- 
+
 sub length {
     my ($array) = @_;
     CORE::scalar @$array;
 }
 
-sub grep { 
-    my ($array, $sub) = @_; 
-    [ CORE::grep { $sub->($_) } @$array ]; 
+sub grep {
+    my ($array, $sub) = @_;
+    [ CORE::grep { $sub->($_) } @$array ];
 }
 
-sub map { 
-    my ($array, $sub) = @_; 
-    [ CORE::map { $sub->($_) } @$array ]; 
+sub map {
+    my ($array, $sub) = @_;
+    [ CORE::map { $sub->($_) } @$array ];
 }
 
-sub join { 
-    my ($array, $sep) = @_;    
-    $sep ||= ''; 
-    CORE::join $sep, @$array; 
+sub join {
+    my ($array, $sep) = @_;
+    $sep ||= '';
+    CORE::join $sep, @$array;
 }
 
-sub reverse { 
+sub reverse {
     my ($array) = @_;
     [ CORE::reverse @$array ];
 }
 
-sub sort { 
-    my ($array, $sub) = @_;     
-    $sub ||= sub { $a cmp $b }; 
-    [ CORE::sort { $sub->($a, $b) } @$array ]; 
-}    
+sub sort {
+    my ($array, $sub) = @_;
+    $sub ||= sub { $a cmp $b };
+    [ CORE::sort { $sub->($a, $b) } @$array ];
+}
 
 sub first {
     $_[0]->[0];
@@ -102,7 +102,7 @@ sub last {
 sub at {
     my ($array, $index) = @_;
     $array->[$index];
-} 
+}
 
 sub put {
     my ($array, $index, $value) = @_;
@@ -110,22 +110,22 @@ sub put {
 }
 
 sub exists {
-    my ($array, $index) = @_;    
-    CORE::exists $array->[$index];    
+    my ($array, $index) = @_;
+    CORE::exists $array->[$index];
 }
 
-sub keys { 
-    my ($array) = @_;    
+sub keys {
+    my ($array) = @_;
     [ 0 .. $#{$array} ];
 }
 
-sub values { 
-    my ($array) = @_;    
+sub values {
+    my ($array) = @_;
     [ @$array ];
 }
 
 sub kv {
-    my ($array) = @_;   
+    my ($array) = @_;
     $array->keys->map(sub { [ $_, $array->[$_] ] });
 }
 
@@ -163,11 +163,11 @@ sub flatten {
     @{$_[0]}
 }
 
-sub _flatten_deep { 
+sub _flatten_deep {
     my @array = @_;
     my $depth = CORE::pop @array;
     --$depth if (defined($depth));
-    
+
     CORE::map {
         (ref eq 'ARRAY')
             ? (defined($depth) && $depth == -1) ? $_ : _flatten_deep( @$_, $depth )
@@ -176,30 +176,30 @@ sub _flatten_deep {
 
 }
 
-sub flatten_deep { 
-    my ($array, $depth) = @_;    
+sub flatten_deep {
+    my ($array, $depth) = @_;
     [ _flatten_deep(@$array, $depth) ];
 }
 
 ## Junctions
 
 sub all {
-    my ($array) = @_;     
+    my ($array) = @_;
     return Syntax::Keyword::Junction::All->new(@$array);
 }
 
 sub any {
-    my ($array) = @_;     
+    my ($array) = @_;
     return Syntax::Keyword::Junction::Any->new(@$array);
 }
 
 sub none {
-    my ($array) = @_;     
+    my ($array) = @_;
     return Syntax::Keyword::Junction::None->new(@$array);
 }
 
 sub one {
-    my ($array) = @_; 
+    my ($array) = @_;
     return Syntax::Keyword::Junction::One->new(@$array);
 }
 
@@ -216,27 +216,27 @@ __END__
 
 =pod
 
-=head1 NAME 
+=head1 NAME
 
 Moose::Autobox::Array - the Array role
 
 =head1 SYNOPOSIS
 
   use Moose::Autobox;
-    
+
   [ 1..5 ]->isa('ARRAY'); # true
   [ a..z ]->does('Moose::Autobox::Array'); # true
-  [ 0..2 ]->does('Moose::Autobox::List'); # true  
-    
+  [ 0..2 ]->does('Moose::Autobox::List'); # true
+
   print "Squares: " . [ 1 .. 10 ]->map(sub { $_ * $_ })->join(', ');
-  
+
   print [ 1, 'number' ]->sprintf('%d is the loneliest %s');
-  
+
   print ([ 1 .. 5 ]->any == 3) ? 'true' : 'false'; # prints 'true'
 
 =head1 DESCRIPTION
 
-This is a role to describe operations on the Array type. 
+This is a role to describe operations on the Array type.
 
 =head1 METHODS
 
@@ -308,14 +308,14 @@ This is a role to describe operations on the Array type.
 
 =item B<grep (\&block)>
 
-Note that, in both the above, $_ is in scope within the code block, as well as 
-being passed as $_[0]. As per CORE::map and CORE::grep, $_ is an alias to 
+Note that, in both the above, $_ is in scope within the code block, as well as
+being passed as $_[0]. As per CORE::map and CORE::grep, $_ is an alias to
 the list value, so can be used to modify the list, viz:
 
     use Moose::Autobox;
 
-    my $foo = [1, 2, 3]; 
-    $foo->map( sub {$_++} ); 
+    my $foo = [1, 2, 3];
+    $foo->map( sub {$_++} );
     print $foo->dump;
 
 yields
@@ -325,7 +325,7 @@ yields
              3,
              4
            ];
-        
+
 =item B<reverse>
 
 =item B<sort (?\&block)>
@@ -358,7 +358,7 @@ yields
 
 =head1 BUGS
 
-All complex software has bugs lurking in it, and this module is no 
+All complex software has bugs lurking in it, and this module is no
 exception. If you find a bug please either email me, or add the bug
 to cpan-RT.
 

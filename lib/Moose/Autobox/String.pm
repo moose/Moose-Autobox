@@ -17,7 +17,7 @@ sub reverse { CORE::reverse $_[0] }
 sub length  { CORE::length  $_[0] }
 sub lines   { [ CORE::split '\n', $_[0] ] }
 sub words   { [ CORE::split ' ',  $_[0] ] }
-sub index   { 
+sub index   {
     return CORE::index($_[0], $_[1]) if scalar @_ == 2;
     return CORE::index($_[0], $_[1], $_[2]);
 }
@@ -36,14 +36,14 @@ __END__
 
 =pod
 
-=head1 NAME 
+=head1 NAME
 
 Moose::Autobox::String - the String role
 
 =head1 SYNOPOSIS
 
   use Moose::Autobox;
-  
+
   "Hello World"->uc; # HELLO WORLD
 
 =head1 DESCRIPTION
@@ -96,7 +96,7 @@ This is equivalent to splitting on newlines.
 
 =head1 BUGS
 
-All complex software has bugs lurking in it, and this module is no 
+All complex software has bugs lurking in it, and this module is no
 exception. If you find a bug please either email me, or add the bug
 to cpan-RT.
 

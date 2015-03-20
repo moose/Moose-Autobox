@@ -1,13 +1,13 @@
-package Moose::Autobox::Indexed;     
+package Moose::Autobox::Indexed;
 use Moose::Role 'requires';
 
 our $VERSION = '0.16';
 
 requires 'at';
 requires 'put';
-requires 'exists'; 
+requires 'exists';
 requires 'keys';
-requires 'values'; 
+requires 'values';
 requires 'kv';
 requires 'slice';
 requires qw(each each_key each_value each_n_values);
@@ -18,16 +18,16 @@ __END__
 
 =pod
 
-=head1 NAME 
+=head1 NAME
 
 Moose::Autobox::Indexed - the Indexed role
 
 =head1 DESCRIPTION
 
-This is a role to describes an collection whose values can be 
-accessed by a key of some kind. 
+This is a role to describes an collection whose values can be
+accessed by a key of some kind.
 
-The role is entirely abstract, those which implement it must 
+The role is entirely abstract, those which implement it must
 supply all it's methods. Currently both L<Moose::Autobox::Array>
 and L<Moose::Autobox::Hash> implement this role.
 
@@ -67,7 +67,7 @@ and L<Moose::Autobox::Hash> implement this role.
 
 =head1 BUGS
 
-All complex software has bugs lurking in it, and this module is no 
+All complex software has bugs lurking in it, and this module is no
 exception. If you find a bug please either email me, or add the bug
 to cpan-RT.
 

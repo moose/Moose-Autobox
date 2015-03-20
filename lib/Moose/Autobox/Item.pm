@@ -1,4 +1,4 @@
-package Moose::Autobox::Item;     
+package Moose::Autobox::Item;
 use Moose::Role 'requires';
 
 our $VERSION = '0.16';
@@ -19,13 +19,13 @@ __END__
 
 =pod
 
-=head1 NAME 
+=head1 NAME
 
 Moose::Autobox::Item - the Item role
 
 =head1 DESCRIPTION
 
-This is the root of our role hierarchy. 
+This is the root of our role hierarchy.
 
 =head1 METHODS
 
@@ -57,7 +57,7 @@ Like &print with newline.
 
 =head1 BUGS
 
-All complex software has bugs lurking in it, and this module is no 
+All complex software has bugs lurking in it, and this module is no
 exception. If you find a bug please either email me, or add the bug
 to cpan-RT.
 

@@ -9,10 +9,10 @@ with 'Moose::Autobox::Value';
 
 requires 'head';
 requires 'tail';
-requires 'length'; 
-requires 'join'; 
-requires 'grep'; 
-requires 'map'; 
+requires 'length';
+requires 'join';
+requires 'grep';
+requires 'map';
 requires 'sort';
 requires 'reverse';
 
@@ -26,8 +26,8 @@ sub reduce {
 
 sub zip {
     my ($array, $other) = @_;
-    ($array->length < $other->length 
-        ? $other 
+    ($array->length < $other->length
+        ? $other
         : $array)
             ->keys
             ->map(sub {
@@ -41,15 +41,15 @@ __END__
 
 =pod
 
-=head1 NAME 
+=head1 NAME
 
 Moose::Autobox::List - the List role
 
 =head1 DESCRIPTION
 
-This is a role to describes a List interface. This is not 
+This is a role to describes a List interface. This is not
 meant to be any specific Perl type, but instead an interface
-that certain Perl types might implement. Currenly only 
+that certain Perl types might implement. Currenly only
 L<Moose::Autobox::Array> implements this.
 
 =head1 METHODS
@@ -92,7 +92,7 @@ L<Moose::Autobox::Array> implements this.
 
 =head1 BUGS
 
-All complex software has bugs lurking in it, and this module is no 
+All complex software has bugs lurking in it, and this module is no
 exception. If you find a bug please either email me, or add the bug
 to cpan-RT.
 

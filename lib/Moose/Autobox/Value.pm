@@ -1,11 +1,11 @@
-package Moose::Autobox::Value;     
+package Moose::Autobox::Value;
 use Moose::Role 'with';
 
 our $VERSION = '0.16';
 
 with 'Moose::Autobox::Defined';
 
-sub do { 
+sub do {
     my ($self, $block) = @_;
     local $_ = $self;
     $block->($self);
@@ -16,14 +16,14 @@ __END__
 
 =pod
 
-=head1 NAME 
+=head1 NAME
 
 Moose::Autobox::Value - the Value role
 
 =head1 SYNOPOSIS
 
   use Moose::Autobox;
-  
+
   # execute a sub on the value
   print 10->do(sub { $_ * $_ }); # prints 100
 
@@ -43,7 +43,7 @@ This is a role to describes a defined (non-reference) Perl value.
 
 =head1 BUGS
 
-All complex software has bugs lurking in it, and this module is no 
+All complex software has bugs lurking in it, and this module is no
 exception. If you find a bug please either email me, or add the bug
 to cpan-RT.
 

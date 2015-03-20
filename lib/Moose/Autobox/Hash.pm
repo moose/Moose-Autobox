@@ -6,9 +6,9 @@ our $VERSION = '0.16';
 with 'Moose::Autobox::Ref',
      'Moose::Autobox::Indexed';
 
-sub delete { 
+sub delete {
     my ($hash, $key) = @_;
-    CORE::delete $hash->{$key}; 
+    CORE::delete $hash->{$key};
 }
 
 sub merge {
@@ -32,31 +32,31 @@ sub flatten {
 sub at {
     my ($hash, $index) = @_;
     $hash->{$index};
-} 
+}
 
 sub put {
     my ($hash, $index, $value) = @_;
     $hash->{$index} = $value;
 }
 
-sub exists { 
+sub exists {
     my ($hash, $key) = @_;
-    CORE::exists $hash->{$key}; 
+    CORE::exists $hash->{$key};
 }
 
-sub keys { 
+sub keys {
     my ($hash) = @_;
     [ CORE::keys %$hash ];
 }
 
-sub values { 
-    my ($hash) = @_;    
-    [ CORE::values %$hash ]; 
+sub values {
+    my ($hash) = @_;
+    [ CORE::values %$hash ];
 }
 
 sub kv {
-    my ($hash) = @_;    
-    [ CORE::map { [ $_, $hash->{$_} ] } CORE::keys %$hash ];    
+    my ($hash) = @_;
+    [ CORE::map { [ $_, $hash->{$_} ] } CORE::keys %$hash ];
 }
 
 sub slice {
@@ -105,19 +105,19 @@ __END__
 
 =pod
 
-=head1 NAME 
+=head1 NAME
 
 Moose::Autobox::Hash - the Hash role
 
 =head1 SYNOPOSIS
 
   use Moose::Autobox;
-  
+
   print { one => 1, two => 2 }->keys->join(', '); # prints 'one, two'
 
 =head1 DESCRIPTION
 
-This is a role to describes a Hash value. 
+This is a role to describes a Hash value.
 
 =head1 METHODS
 
@@ -178,7 +178,7 @@ Slices a hash but returns the keys and values as a new hashref.
 
 =head1 BUGS
 
-All complex software has bugs lurking in it, and this module is no 
+All complex software has bugs lurking in it, and this module is no
 exception. If you find a bug please either email me, or add the bug
 to cpan-RT.
 

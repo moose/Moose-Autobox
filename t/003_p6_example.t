@@ -16,18 +16,18 @@ This comes from one of the examples in the Pugs distro.
     package Units::Bytes;
     use Moose::Role;
     use Moose::Autobox;
-    
-    sub bytes     { $_[0]                   }    
+
+    sub bytes     { $_[0]                   }
     sub kilobytes { $_[0] * 1024            }
     sub megabytes { $_[0] * 1024->kilobytes }
     sub gigabytes { $_[0] * 1024->megabytes }
     sub terabytes { $_[0] * 1024->gigabytes }
-    
+
     {
         no warnings 'once'; # << squelch the stupid "used only once, maybe typo" warnings
         *byte     = \&bytes;
-        *kilobyte = \&kilobytes;    
-        *megabyte = \&megabytes;    
+        *kilobyte = \&kilobytes;
+        *megabyte = \&megabytes;
         *gigabyte = \&gigabytes;
         *terabyte = \&terabytes;
     }

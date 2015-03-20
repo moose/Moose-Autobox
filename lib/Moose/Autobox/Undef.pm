@@ -4,7 +4,7 @@ use Moose::Role 'with';
 our $VERSION = '0.16';
 
 with 'Moose::Autobox::Item';
-            
+
 sub defined { 0 }
 
 1;
@@ -13,7 +13,7 @@ __END__
 
 =pod
 
-=head1 NAME 
+=head1 NAME
 
 Moose::Autobox::Undef - the Undef role
 
@@ -26,7 +26,7 @@ Moose::Autobox::Undef - the Undef role
 
 =head1 DESCRIPTION
 
-This is a role to describes a undefined value. 
+This is a role to describes a undefined value.
 
 =head1 METHODS
 
@@ -44,7 +44,7 @@ This is a role to describes a undefined value.
 
 =head1 BUGS
 
-All complex software has bugs lurking in it, and this module is no 
+All complex software has bugs lurking in it, and this module is no
 exception. If you find a bug please either email me, or add the bug
 to cpan-RT.
 

@@ -5,7 +5,7 @@ use Test::More tests => 14;
 
 BEGIN {
     use_ok('Moose::Autobox');
-    
+
     use_ok('Moose::Autobox::Array');
     use_ok('Moose::Autobox::Code');
     use_ok('Moose::Autobox::Defined');
@@ -18,5 +18,5 @@ BEGIN {
     use_ok('Moose::Autobox::Scalar');
     use_ok('Moose::Autobox::String');
     use_ok('Moose::Autobox::Undef');
-    use_ok('Moose::Autobox::Value');    
+    use_ok('Moose::Autobox::Value');
 }

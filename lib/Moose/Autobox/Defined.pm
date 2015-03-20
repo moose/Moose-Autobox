@@ -4,7 +4,7 @@ use Moose::Role 'with';
 our $VERSION = '0.16';
 
 with 'Moose::Autobox::Item';
-            
+
 sub defined { 1 }
 
 1;
@@ -13,23 +13,23 @@ __END__
 
 =pod
 
-=head1 NAME 
+=head1 NAME
 
 Moose::Autobox::Defined - the Defined role
 
 =head1 SYNOPOSIS
 
   use Moose::Autobox;
-  
+
   my $x;
   $x->defined; # false
-  
+
   $x = 10;
-  $x->defined; # true  
+  $x->defined; # true
 
 =head1 DESCRIPTION
 
-This is a role to describes a defined value. 
+This is a role to describes a defined value.
 
 =head1 METHODS
 
@@ -47,7 +47,7 @@ This is a role to describes a defined value.
 
 =head1 BUGS
 
-All complex software has bugs lurking in it, and this module is no 
+All complex software has bugs lurking in it, and this module is no
 exception. If you find a bug please either email me, or add the bug
 to cpan-RT.
 
