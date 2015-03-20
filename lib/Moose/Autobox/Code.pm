@@ -17,7 +17,7 @@ sub rcurry {
 }
 
 sub compose {
-	my ($f, $f2, @rest) = @_;
+    my ($f, $f2, @rest) = @_;
     return $f if !$f2;
     return (sub { $f2->($f->(@_)) })->compose(@rest);
 }
@@ -28,8 +28,8 @@ sub disjoin {
 }
         
 sub conjoin {
-	my ($f, $f2) = @_;
-	return sub { $f->(@_) && $f2->(@_) }    
+    my ($f, $f2) = @_;
+    return sub { $f->(@_) && $f2->(@_) }    
 }
 
 # fixed point combinators
