@@ -100,7 +100,6 @@ sub print   { CORE::print %{$_[0]} }
 sub say     { CORE::print %{$_[0]}, "\n" }
 
 1;
-
 __END__
 
 =pod
@@ -196,4 +195,3 @@ This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
 =cut
-

@@ -14,7 +14,6 @@ sub dump {
 *perl = \&dump;
 
 1;
-
 __END__
 
 =pod

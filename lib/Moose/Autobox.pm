@@ -1,4 +1,3 @@
-
 package Moose::Autobox;
 use 5.006;
 use strict;
@@ -29,7 +28,6 @@ sub mixin_additional_role {
 }
 
 {
-
     package
       Moose::Autobox::SCALAR;
 
@@ -73,11 +71,9 @@ sub mixin_additional_role {
     Moose::Util::apply_all_roles(__PACKAGE__->meta, ('Moose::Autobox::Code'));
 
     *does = \&Moose::Object::does;
-
 }
 
 1;
-
 __END__
 
 =pod

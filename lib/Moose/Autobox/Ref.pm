@@ -6,7 +6,6 @@ our $VERSION = '0.16';
 with 'Moose::Autobox::Defined';
 
 1;
-
 __END__
 
 =pod

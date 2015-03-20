@@ -8,7 +8,6 @@ with 'Moose::Autobox::Item';
 sub defined { 1 }
 
 1;
-
 __END__
 
 =pod

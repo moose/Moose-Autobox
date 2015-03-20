@@ -1,4 +1,3 @@
-
 package Moose::Autobox::List;
 use Moose::Role 'with', 'requires';
 use Moose::Autobox;
@@ -36,7 +35,6 @@ sub zip {
 }
 
 1;
-
 __END__
 
 =pod

@@ -11,8 +11,8 @@ sub first { $_[0] }
 sub last  { $_[0] }
 sub print { CORE::print $_[0] }
 sub say   { CORE::print $_[0], "\n" }
-1;
 
+1;
 __END__
 
 =pod

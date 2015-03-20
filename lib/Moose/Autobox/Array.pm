@@ -211,7 +211,6 @@ sub say   { CORE::print @{$_[0]}, "\n" }
 no Moose::Role;
 
 1;
-
 __END__
 
 =pod

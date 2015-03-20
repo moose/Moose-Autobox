@@ -13,7 +13,6 @@ requires 'slice';
 requires qw(each each_key each_value each_n_values);
 
 1;
-
 __END__
 
 =pod
