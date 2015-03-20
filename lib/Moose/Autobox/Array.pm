@@ -7,7 +7,7 @@ use Syntax::Keyword::Junction::Any ();
 use Syntax::Keyword::Junction::None ();
 use Syntax::Keyword::Junction::One ();
 
-our $VERSION = '0.15';
+our $VERSION = '0.16';
 
 with 'Moose::Autobox::Ref',
      'Moose::Autobox::List',

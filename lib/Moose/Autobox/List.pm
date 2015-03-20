@@ -3,7 +3,7 @@ package Moose::Autobox::List;
 use Moose::Role 'with', 'requires';
 use Moose::Autobox;
 
-our $VERSION = '0.15';
+our $VERSION = '0.16';
 
 with 'Moose::Autobox::Value';
 

@@ -2,7 +2,7 @@ package Moose::Autobox::Code;
 use Moose::Role 'with';
 use Moose::Autobox;
 
-our $VERSION = '0.15';
+our $VERSION = '0.16';
 
 with 'Moose::Autobox::Ref';
 

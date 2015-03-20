@@ -1,7 +1,7 @@
 package Moose::Autobox::Item;     
 use Moose::Role 'requires';
 
-our $VERSION = '0.15';
+our $VERSION = '0.16';
 
 requires 'defined';
 
