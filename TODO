@@ -1,3 +1,9 @@
+dzilify:
+- canonicalize Changes entries
+- use podweaver
+- fix release tests
+
+
 ---------------------
 
 Add create() to Moose::Meta::Class to allow for roles to be passed in.

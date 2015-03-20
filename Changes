@@ -1,4 +1,6 @@
-Revision history for Perl extension Moose::Autobox
+Revision history for {{$dist->name}}
+
+{{$NEXT}}
 
 0.15  Sun Oct 27 21:59:43 EDT 2013
     - hide internal packages from PAUSE

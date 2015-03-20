@@ -1,0 +1,6 @@
+/.ackrc
+/.build/
+!/.gitignore
+/.latest
+/Moose-Autobox-*/
+/Moose-Autobox-*.tar.gz
