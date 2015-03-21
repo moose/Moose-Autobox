@@ -97,6 +97,8 @@ subroutine where the output of one sub will be the input of another.
 
 =item C<y>
 
+=for :stopwords combinator
+
 This implements the Y combinator.
 
 =item C<u>

@@ -45,7 +45,7 @@ __END__
 
 This is a role to describes a List interface. This is not
 meant to be any specific Perl type, but instead an interface
-that certain Perl types might implement. Currenly only
+that certain Perl types might implement. Currently only
 L<Moose::Autobox::Array> implements this.
 
 =head1 METHODS

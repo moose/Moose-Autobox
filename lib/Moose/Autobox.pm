@@ -79,6 +79,9 @@ __END__
 
 =pod
 
+=for :header
+=for :stopwords Autoboxed autobox
+
 =head1 SYNOPSIS
 
   use Moose::Autobox;
@@ -144,6 +147,8 @@ This can be used to add additional methods to the types, see the
 F<examples/units/> directory for some examples.
 
 =back
+
+=for :stopwords TODO
 
 =head1 TODO
 
