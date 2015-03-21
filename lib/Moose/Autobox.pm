@@ -1,4 +1,5 @@
 package Moose::Autobox;
+# ABSTRACT: Autoboxed wrappers for Native Perl datatypes
 use 5.006;
 use strict;
 use warnings;
@@ -77,10 +78,6 @@ sub mixin_additional_role {
 __END__
 
 =pod
-
-=head1 NAME
-
-Moose::Autobox - Autoboxed wrappers for Native Perl datatypes
 
 =head1 SYNOPSIS
 
@@ -163,26 +160,5 @@ F<examples/units/> directory for some examples.
 All complex software has bugs lurking in it, and this module is no
 exception. If you find a bug please either email me, or add the bug
 to cpan-RT.
-
-=head1 AUTHOR
-
-Stevan Little E<lt>stevan@iinteractive.comE<gt>
-
-B<with contributions from:>
-
-Anders (Debolaz) Nor Berle
-
-Matt (mst) Trout
-
-renormalist
-
-=head1 COPYRIGHT AND LICENSE
-
-Copyright 2006-2008 by Infinity Interactive, Inc.
-
-L<http://www.iinteractive.com>
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
 
 =cut
