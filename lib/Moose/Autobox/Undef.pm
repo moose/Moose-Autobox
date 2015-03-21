@@ -29,13 +29,13 @@ This is a role to describes a undefined value.
 
 =over 4
 
-=item B<defined>
+=item C<defined>
 
 =back
 
 =over 4
 
-=item B<meta>
+=item C<meta>
 
 =back
 

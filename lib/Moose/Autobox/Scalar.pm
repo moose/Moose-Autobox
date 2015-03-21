@@ -28,13 +28,13 @@ as the combination (union sort of) of a String and a Number.
 
 =over 4
 
-=item B<meta>
+=item C<meta>
 
-=item B<print>
+=item C<print>
 
-=item B<say>
+=item C<say>
 
-=item B<flatten>
+=item C<flatten>
 
 Flattening a scalar just returns the scalar.  This means that you can say:
 
@@ -43,11 +43,11 @@ Flattening a scalar just returns the scalar.  This means that you can say:
   # Given $input of 5, @array is (5);
   # Given $input of [ 5, 2, 0], @array is (5, 2, 0)
 
-=item B<first>
+=item C<first>
 
 As per flatten.
 
-=item B<last>
+=item C<last>
 
 As per flatten.
 

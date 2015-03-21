@@ -51,35 +51,35 @@ This is a role to describes a String value.
 
 =over 4
 
-=item B<chomp>
+=item C<chomp>
 
-=item B<chop>
+=item C<chop>
 
-=item B<index>
+=item C<index>
 
-=item B<lc>
+=item C<lc>
 
-=item B<lcfirst>
+=item C<lcfirst>
 
-=item B<length>
+=item C<length>
 
-=item B<reverse>
+=item C<reverse>
 
-=item B<rindex>
+=item C<rindex>
 
-=item B<uc>
+=item C<uc>
 
-=item B<ucfirst>
+=item C<ucfirst>
 
-=item B<split>
+=item C<split>
 
   $string->split($pattern);
 
-=item B<words>
+=item C<words>
 
 This is equivalent to splitting on space.
 
-=item B<lines>
+=item C<lines>
 
 This is equivalent to splitting on newlines.
 
@@ -87,7 +87,7 @@ This is equivalent to splitting on newlines.
 
 =over 4
 
-=item B<meta>
+=item C<meta>
 
 =back
 

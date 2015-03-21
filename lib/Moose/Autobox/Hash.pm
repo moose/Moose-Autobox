@@ -120,18 +120,18 @@ This is a role to describes a Hash value.
 
 =over 4
 
-=item B<delete>
+=item C<delete>
 
-=item B<merge>
+=item C<merge>
 
 Takes a hashref and returns a new hashref with right precedence
 shallow merging.
 
-=item B<hslice>
+=item C<hslice>
 
 Slices a hash but returns the keys and values as a new hashref.
 
-=item B<flatten>
+=item C<flatten>
 
 =back
 
@@ -139,37 +139,37 @@ Slices a hash but returns the keys and values as a new hashref.
 
 =over 4
 
-=item B<at>
+=item C<at>
 
-=item B<put>
+=item C<put>
 
-=item B<exists>
+=item C<exists>
 
-=item B<keys>
+=item C<keys>
 
-=item B<values>
+=item C<values>
 
-=item B<kv>
+=item C<kv>
 
-=item B<slice>
+=item C<slice>
 
-=item B<each>
+=item C<each>
 
-=item B<each_key>
+=item C<each_key>
 
-=item B<each_value>
+=item C<each_value>
 
-=item B<each_n_values>
+=item C<each_n_values>
 
 =back
 
 =over 4
 
-=item B<meta>
+=item C<meta>
 
-=item B<print>
+=item C<print>
 
-=item B<say>
+=item C<say>
 
 =back
 

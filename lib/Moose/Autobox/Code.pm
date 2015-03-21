@@ -82,24 +82,24 @@ This is a role to describe operations on the Code type.
 
 =over 4
 
-=item B<curry (@values)>
+=item C<curry (@values)>
 
-=item B<rcurry (@values)>
+=item C<rcurry (@values)>
 
-=item B<conjoin (\&sub)>
+=item C<conjoin (\&sub)>
 
-=item B<disjoin (\&sub)>
+=item C<disjoin (\&sub)>
 
-=item B<compose (@subs)>
+=item C<compose (@subs)>
 
 This will take a list of C<@subs> and compose them all into a single
 subroutine where the output of one sub will be the input of another.
 
-=item B<y>
+=item C<y>
 
 This implements the Y combinator.
 
-=item B<u>
+=item C<u>
 
 This implements the U combinator.
 
@@ -107,7 +107,7 @@ This implements the U combinator.
 
 =over 4
 
-=item B<meta>
+=item C<meta>
 
 =back
 

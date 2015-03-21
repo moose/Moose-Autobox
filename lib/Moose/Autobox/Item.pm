@@ -28,19 +28,19 @@ This is the root of our role hierarchy.
 
 =over 4
 
-=item B<meta>
+=item C<meta>
 
-=item B<dump>
+=item C<dump>
 
 Calls Data::Dumper::Dumper.
 
-=item B<perl>
+=item C<perl>
 
-Same as B<dump>. For symmetry with Perl6's .perl method.
+Same as C<dump>. For symmetry with Perl6's .perl method.
 
 Like &print with newline.
 
-=item B<print2>
+=item C<print2>
 
 =back
 
@@ -48,7 +48,7 @@ Like &print with newline.
 
 =over 4
 
-=item B<defined>
+=item C<defined>
 
 =back
 

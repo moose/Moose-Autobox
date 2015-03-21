@@ -52,15 +52,15 @@ L<Moose::Autobox::Array> implements this.
 
 =over 4
 
-=item B<reduce>
+=item C<reduce>
 
-=item B<zip>
+=item C<zip>
 
 =back
 
 =over 4
 
-=item B<meta>
+=item C<meta>
 
 =back
 
@@ -68,21 +68,21 @@ L<Moose::Autobox::Array> implements this.
 
 =over 4
 
-=item B<head>
+=item C<head>
 
-=item B<tail>
+=item C<tail>
 
-=item B<join>
+=item C<join>
 
-=item B<length>
+=item C<length>
 
-=item B<map>
+=item C<map>
 
-=item B<grep>
+=item C<grep>
 
-=item B<reverse>
+=item C<reverse>
 
-=item B<sort>
+=item C<sort>
 
 =back
 

@@ -135,7 +135,7 @@ as you would with vanilla autobox.
 
 =over 4
 
-=item B<mixin_additional_role ($type, $role)>
+=item C<mixin_additional_role ($type, $role)>
 
 This will mixin an additional C<$role> into a certain C<$type>. The
 types can be SCALAR, ARRAY, HASH or CODE.

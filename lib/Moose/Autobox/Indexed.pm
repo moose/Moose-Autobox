@@ -32,7 +32,7 @@ and L<Moose::Autobox::Hash> implement this role.
 
 =over 4
 
-=item B<meta>
+=item C<meta>
 
 =back
 
@@ -40,25 +40,25 @@ and L<Moose::Autobox::Hash> implement this role.
 
 =over 4
 
-=item B<at>
+=item C<at>
 
-=item B<put>
+=item C<put>
 
-=item B<exists>
+=item C<exists>
 
-=item B<keys>
+=item C<keys>
 
-=item B<values>
+=item C<values>
 
-=item B<kv>
+=item C<kv>
 
-=item B<slice>
+=item C<slice>
 
-=item B<each>
+=item C<each>
 
-=item B<each_key>
+=item C<each_key>
 
-=item B<each_value>
+=item C<each_value>
 
 =back
 

@@ -239,27 +239,27 @@ This is a role to describe operations on the Array type.
 
 =over 4
 
-=item B<pop>
+=item C<pop>
 
-=item B<push ($value)>
+=item C<push ($value)>
 
-=item B<shift>
+=item C<shift>
 
-=item B<unshift ($value)>
+=item C<unshift ($value)>
 
-=item B<delete ($index)>
+=item C<delete ($index)>
 
-=item B<sprintf ($format_string)>
+=item C<sprintf ($format_string)>
 
-=item B<slice (@indices)>
+=item C<slice (@indices)>
 
-=item B<flatten>
+=item C<flatten>
 
-=item B<flatten_deep ($depth)>
+=item C<flatten_deep ($depth)>
 
-=item B<first>
+=item C<first>
 
-=item B<last>
+=item C<last>
 
 =back
 
@@ -267,25 +267,25 @@ This is a role to describe operations on the Array type.
 
 =over 4
 
-=item B<at ($index)>
+=item C<at ($index)>
 
-=item B<put ($index, $value)>
+=item C<put ($index, $value)>
 
-=item B<exists ($index)>
+=item C<exists ($index)>
 
-=item B<keys>
+=item C<keys>
 
-=item B<values>
+=item C<values>
 
-=item B<kv>
+=item C<kv>
 
-=item B<each>
+=item C<each>
 
-=item B<each_key>
+=item C<each_key>
 
-=item B<each_value>
+=item C<each_value>
 
-=item B<each_n_values ($n, $callback)>
+=item C<each_n_values ($n, $callback)>
 
 =back
 
@@ -293,17 +293,17 @@ This is a role to describe operations on the Array type.
 
 =over 4
 
-=item B<head>
+=item C<head>
 
-=item B<tail>
+=item C<tail>
 
-=item B<join (?$seperator)>
+=item C<join (?$seperator)>
 
-=item B<length>
+=item C<length>
 
-=item B<map (\&block)>
+=item C<map (\&block)>
 
-=item B<grep (\&block)>
+=item C<grep (\&block)>
 
 Note that, in both the above, $_ is in scope within the code block, as well as
 being passed as $_[0]. As per CORE::map and CORE::grep, $_ is an alias to
@@ -323,9 +323,9 @@ yields
              4
            ];
 
-=item B<reverse>
+=item C<reverse>
 
-=item B<sort (?\&block)>
+=item C<sort (?\&block)>
 
 =back
 
@@ -333,23 +333,23 @@ yields
 
 =over 4
 
-=item B<all>
+=item C<all>
 
-=item B<any>
+=item C<any>
 
-=item B<none>
+=item C<none>
 
-=item B<one>
+=item C<one>
 
 =back
 
 =over 4
 
-=item B<meta>
+=item C<meta>
 
-=item B<print>
+=item C<print>
 
-=item B<say>
+=item C<say>
 
 =back
 

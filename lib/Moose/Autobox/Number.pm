@@ -25,7 +25,7 @@ This is a role to describes a Numeric value.
 
 =over 4
 
-=item B<to>
+=item C<to>
 
 Takes another number as argument and produces an array ranging from
 the number the method is called on to the number given as argument. In
@@ -40,7 +40,7 @@ range operator in perl:
 
 =over 4
 
-=item B<meta>
+=item C<meta>
 
 =back
 
