@@ -1,5 +1,6 @@
 package Moose::Autobox::Undef;
 use Moose::Role 'with';
+use namespace::autoclean;
 
 our $VERSION = '0.16';
 

@@ -6,6 +6,7 @@ use Syntax::Keyword::Junction::All ();
 use Syntax::Keyword::Junction::Any ();
 use Syntax::Keyword::Junction::None ();
 use Syntax::Keyword::Junction::One ();
+use namespace::autoclean;
 
 our $VERSION = '0.16';
 

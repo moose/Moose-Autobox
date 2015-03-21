@@ -3,7 +3,7 @@ use 5.006;
 use strict;
 use warnings;
 
-use Carp        qw(confess);
+use Carp ();
 use Scalar::Util ();
 use Moose::Util  ();
 
@@ -23,7 +23,7 @@ sub import {
 sub mixin_additional_role {
     my ($class, $type, $role) = @_;
     ($type =~ /SCALAR|ARRAY|HASH|CODE/)
-        || confess "Can only add additional roles to SCALAR, ARRAY, HASH or CODE";
+        || Carp::confess "Can only add additional roles to SCALAR, ARRAY, HASH or CODE";
     Moose::Util::apply_all_roles(('Moose::Autobox::' . $type)->meta, ($role));
 }
 
