@@ -109,7 +109,7 @@ __END__
 
 Moose::Autobox::Hash - the Hash role
 
-=head1 SYNOPOSIS
+=head1 SYNOPSIS
 
   use Moose::Autobox;
 

@@ -17,7 +17,7 @@ __END__
 
 Moose::Autobox::Defined - the Defined role
 
-=head1 SYNOPOSIS
+=head1 SYNOPSIS
 
   use Moose::Autobox;
 

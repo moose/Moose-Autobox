@@ -17,7 +17,7 @@ __END__
 
 Moose::Autobox::Undef - the Undef role
 
-=head1 SYNOPOSIS
+=head1 SYNOPSIS
 
   use Moose::Autobox;
 

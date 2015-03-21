@@ -40,7 +40,7 @@ __END__
 
 Moose::Autobox::String - the String role
 
-=head1 SYNOPOSIS
+=head1 SYNOPSIS
 
   use Moose::Autobox;
 

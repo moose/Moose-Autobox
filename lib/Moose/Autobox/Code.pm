@@ -54,7 +54,7 @@ __END__
 
 Moose::Autobox::Code - the Code role
 
-=head1 SYNOPOSIS
+=head1 SYNOPSIS
 
   use Moose::Autobox;
 

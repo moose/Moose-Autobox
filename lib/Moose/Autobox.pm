@@ -82,7 +82,7 @@ __END__
 
 Moose::Autobox - Autoboxed wrappers for Native Perl datatypes
 
-=head1 SYNOPOSIS
+=head1 SYNOPSIS
 
   use Moose::Autobox;
 

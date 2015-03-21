@@ -21,7 +21,7 @@ __END__
 
 Moose::Autobox::Value - the Value role
 
-=head1 SYNOPOSIS
+=head1 SYNOPSIS
 
   use Moose::Autobox;
 

@@ -220,7 +220,7 @@ __END__
 
 Moose::Autobox::Array - the Array role
 
-=head1 SYNOPOSIS
+=head1 SYNOPSIS
 
   use Moose::Autobox;
 
