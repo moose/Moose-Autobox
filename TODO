@@ -1,8 +1,5 @@
-dzilify:
-- canonicalize Changes entries
-- use podweaver
-- fix release tests
 
+outstanding issues on blead (5.21.7-10)
 
 ---------------------
 
