@@ -39,10 +39,4 @@ This is a role to describes a defined (non-reference) Perl value.
 
 =back
 
-=head1 BUGS
-
-All complex software has bugs lurking in it, and this module is no
-exception. If you find a bug please either email me, or add the bug
-to cpan-RT.
-
 =cut
