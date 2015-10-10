@@ -1,6 +1,6 @@
 package Moose::Autobox::Number;
 # ABSTRACT: Moose::Autobox::Number - the Number role
-use Moose::Role;
+use Moo::Role 'with';
 use namespace::autoclean;
 
 our $VERSION = '0.16';

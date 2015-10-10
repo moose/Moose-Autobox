@@ -1,6 +1,6 @@
 package Moose::Autobox::Indexed;
 # ABSTRACT: the Indexed role
-use Moose::Role 'requires';
+use Moo::Role 'requires';
 use namespace::autoclean;
 
 our $VERSION = '0.16';

@@ -14,7 +14,7 @@ This comes from one of the examples in the Pugs distro.
 
 {
     package Units::Bytes;
-    use Moose::Role;
+    use Role::Tiny;
     use Moose::Autobox;
 
     sub bytes     { $_[0]                   }

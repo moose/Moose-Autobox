@@ -1,6 +1,6 @@
 package Moose::Autobox::List;
 # ABSTRACT: the List role
-use Moose::Role 'with', 'requires';
+use Role::Tiny 'with', 'requires';
 use Moose::Autobox;
 use namespace::autoclean;
 

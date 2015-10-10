@@ -6,7 +6,7 @@ use warnings;
 
 use Carp ();
 use Scalar::Util ();
-use Moose::Util  ();
+use Moo::Role  2.000 ();
 
 our $VERSION = '0.16';
 
@@ -25,7 +25,7 @@ sub mixin_additional_role {
     my ($class, $type, $role) = @_;
     ($type =~ /SCALAR|ARRAY|HASH|CODE/)
         || Carp::confess "Can only add additional roles to SCALAR, ARRAY, HASH or CODE";
-    Moose::Util::apply_all_roles(('Moose::Autobox::' . $type)->meta, ($role));
+    Moo::Role->apply_roles_to_package('Moose::Autobox::' . $type, $role);
 }
 
 {
@@ -34,44 +34,28 @@ sub mixin_additional_role {
 
     use Moose::Autobox::Scalar;
 
-    use metaclass 'Moose::Meta::Class';
-
-    Moose::Util::apply_all_roles(__PACKAGE__->meta, ('Moose::Autobox::Scalar'));
-
-    *does = \&Moose::Object::does;
+    Moo::Role->apply_roles_to_package(__PACKAGE__,'Moose::Autobox::Scalar');
 
     package
       Moose::Autobox::ARRAY;
 
     use Moose::Autobox::Array;
 
-    use metaclass 'Moose::Meta::Class';
-
-    Moose::Util::apply_all_roles(__PACKAGE__->meta, ('Moose::Autobox::Array'));
-
-    *does = \&Moose::Object::does;
+    Moo::Role->apply_roles_to_package(__PACKAGE__,'Moose::Autobox::Array');
 
     package
       Moose::Autobox::HASH;
 
     use Moose::Autobox::Hash;
 
-    use metaclass 'Moose::Meta::Class';
-
-    Moose::Util::apply_all_roles(__PACKAGE__->meta, ('Moose::Autobox::Hash'));
-
-    *does = \&Moose::Object::does;
+    Moo::Role->apply_roles_to_package(__PACKAGE__,'Moose::Autobox::Hash');
 
     package
       Moose::Autobox::CODE;
 
     use Moose::Autobox::Code;
 
-    use metaclass 'Moose::Meta::Class';
-
-    Moose::Util::apply_all_roles(__PACKAGE__->meta, ('Moose::Autobox::Code'));
-
-    *does = \&Moose::Object::does;
+    Moo::Role->apply_roles_to_package(__PACKAGE__,'Moose::Autobox::Code');
 }
 
 1;

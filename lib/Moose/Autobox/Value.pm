@@ -1,6 +1,6 @@
 package Moose::Autobox::Value;
 # ABSTRACT: Moose::Autobox::Value - the Value role
-use Moose::Role 'with';
+use Moo::Role 'with';
 use namespace::autoclean;
 
 our $VERSION = '0.16';

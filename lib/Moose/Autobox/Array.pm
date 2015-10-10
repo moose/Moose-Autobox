@@ -1,6 +1,6 @@
 package Moose::Autobox::Array;
 # ABSTRACT: the Array role
-use Moose::Role 'with';
+use Moo::Role 2.000 'with';
 use Moose::Autobox;
 
 use Syntax::Keyword::Junction::All ();
@@ -150,6 +150,7 @@ sub each_value {
 
 sub each_n_values {
     my ($array, $n, $sub) = @_;
+    require List::MoreUtils;
     my $it = List::MoreUtils::natatime($n, @$array);
 
     while (my @vals = $it->()) {
@@ -209,8 +210,6 @@ sub one {
 
 sub print { CORE::print @{$_[0]} }
 sub say   { CORE::print @{$_[0]}, "\n" }
-
-no Moose::Role;
 
 1;
 __END__

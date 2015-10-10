@@ -1,6 +1,6 @@
 package Moose::Autobox::Hash;
 # ABSTRACT: the Hash role
-use Moose::Role 'with';
+use Moo::Role 'with';
 use namespace::autoclean;
 
 our $VERSION = '0.16';
