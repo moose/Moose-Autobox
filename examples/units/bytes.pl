@@ -36,11 +36,11 @@ print "2 megabytes are " . 2->megabytes . " bytes";
 print "1 gigabyte is "   . 1->gigabyte  . " bytes";
 print "2 terabyes are "  . 2->terabytes . " bytes";
 
+# PODNAME: Units::Bytes
+
+__END__
+
 =pod
-
-=head1 NAME
-
-Unit::Bytes
 
 =head1 SYNOPSIS
 
@@ -54,10 +54,6 @@ Unit::Bytes
 =head1 DESCRIPTION
 
 This is a Moose::Autobox port of the perl6 vmethods example.
-
-=head1 AUTHOR
-
-Stevan Little, E<lt>stevan@iinteractive.comE<gt>
 
 =head1 ACKNOWLEDGEMENTS
 

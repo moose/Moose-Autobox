@@ -61,11 +61,9 @@ my $one_week_ago = 1->week->ago;
 print "1 day until 1 week ago   : " . 1->day->til($one_week_ago)->as_string;
 print "2 years since 1 week ago : " . 2->years->since($one_week_ago)->as_string;
 
+__END__
+
 =pod
-
-=head1 NAME
-
-Unit::Time
 
 =head1 SYNOPSIS
 
@@ -79,10 +77,6 @@ Unit::Time
 =head1 DESCRIPTION
 
 This is a Moose::Autobox port of the perl6 vmethods example.
-
-=head1 AUTHOR
-
-Stevan Little, E<lt>stevan@iinteractive.comE<gt>
 
 =head1 ACKNOWLEDGEMENTS
 

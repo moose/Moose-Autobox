@@ -62,12 +62,11 @@ while ($board->any eq '.') {
     $player = $player eq 'X' ? 'O' : 'X';
 }
 
+# PODNAME: tic_tac_toe.pl
+# ABSTRACT: Tic-Tac-Toe
+__END__
 
 =pod
-
-=head1 NAME
-
-tic_tac_toe.pl - Tic-Tac-Toe
 
 =head1 DESCRIPTION
 
@@ -76,10 +75,6 @@ of the classic Tic-Tac-Toe game.
 
 This uses a modified version of the one Rob Kinyon created
 L<http://www.perlmonks.org/index.pl?node_id=451302>.
-
-=head1 AUTHOR
-
-Stevan Little, E<lt>stevan@iinteractive.comE<gt>
 
 =head1 ACKNOWLEDGEMENTS
 
@@ -95,4 +90,3 @@ Stevan Little, E<lt>stevan@iinteractive.comE<gt>
 Audrey Tang
 
 =cut
-
