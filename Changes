@@ -1,6 +1,7 @@
 Revision history for Moose-Autobox
 
 {{$NEXT}}
+    - explicitly depend on List::MoreUtils (Nigel Gregoire, PR#2)
 
 0.15  2013-10-28 01:59:43Z
     - hide internal packages from PAUSE
