@@ -81,7 +81,7 @@ L<http://www.perlmonks.org/index.pl?node_id=451302>.
 
 Stevan Little, E<lt>stevan@iinteractive.comE<gt>
 
-=head1 ACKNOLEDGEMENTS
+=head1 ACKNOWLEDGEMENTS
 
 This code was ported from the version in the Pugs examples/
 directory. The authors of that were:

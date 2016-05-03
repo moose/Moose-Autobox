@@ -59,7 +59,7 @@ This is a Moose::Autobox port of the perl6 vmethods example.
 
 Stevan Little, E<lt>stevan@iinteractive.comE<gt>
 
-=head1 ACKNOLEDGEMENTS
+=head1 ACKNOWLEDGEMENTS
 
 This code was ported from the version in the Pugs
 examples/vmethods/ directory. See that for original author
