@@ -81,12 +81,10 @@ L<http://www.perlmonks.org/index.pl?node_id=451302>.
 This code was ported from the version in the Pugs examples/
 directory. The authors of that were:
 
-mkirank L<http://www.perlmonks.org/index.pl?node_id=451261>
-
-Rob Kinyon L<http://www.perlmonks.org/index.pl?node_id=451302>
-
-Stevan Little, E<lt>stevan@iinteractive.comE<gt>
-
-Audrey Tang
+:for list
+* mkirank L<http://www.perlmonks.org/index.pl?node_id=451261>
+* Rob Kinyon L<http://www.perlmonks.org/index.pl?node_id=451302>
+* Stevan Little, E<lt>stevan@iinteractive.comE<gt>
+* Audrey Tang
 
 =cut
