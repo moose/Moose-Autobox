@@ -10,7 +10,7 @@ use Syntax::Keyword::Junction::None ();
 use Syntax::Keyword::Junction::One ();
 use namespace::autoclean;
 
-our $VERSION = '0.16';
+our $VERSION = '0.17';
 
 with 'Moose::Autobox::Ref',
      'Moose::Autobox::List',

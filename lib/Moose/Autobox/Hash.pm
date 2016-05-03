@@ -4,7 +4,7 @@ use Moose::Role 'with';
 use List::MoreUtils 0.07 ();
 use namespace::autoclean;
 
-our $VERSION = '0.16';
+our $VERSION = '0.17';
 
 with 'Moose::Autobox::Ref',
      'Moose::Autobox::Indexed';

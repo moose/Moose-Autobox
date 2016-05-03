@@ -3,7 +3,7 @@ package Moose::Autobox::Indexed;
 use Moose::Role 'requires';
 use namespace::autoclean;
 
-our $VERSION = '0.16';
+our $VERSION = '0.17';
 
 requires 'at';
 requires 'put';

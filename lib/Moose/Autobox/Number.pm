@@ -3,7 +3,7 @@ package Moose::Autobox::Number;
 use Moose::Role;
 use namespace::autoclean;
 
-our $VERSION = '0.16';
+our $VERSION = '0.17';
 
 with 'Moose::Autobox::Value';
 

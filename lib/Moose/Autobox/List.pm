@@ -4,7 +4,7 @@ use Moose::Role 'with', 'requires';
 use Moose::Autobox;
 use namespace::autoclean;
 
-our $VERSION = '0.16';
+our $VERSION = '0.17';
 
 with 'Moose::Autobox::Value';
 

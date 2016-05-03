@@ -1,5 +1,7 @@
 Revision history for Moose-Autobox
 
+{{$NEXT}}
+
 0.16  2016-05-03 01:33:43Z
     - explicitly depend on List::MoreUtils (Nigel Gregoire, PR#2)
 
