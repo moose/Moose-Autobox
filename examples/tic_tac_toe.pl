@@ -23,14 +23,14 @@ my $choice = [ 1 .. 9 ]->any;
 
 my $player = 'X';
 while ($board->any eq '.') {
-    
+
     INPUT: {
         print("Player ($player), enter the Position [1-9]: ");
         my $in = <>;
 
         unless ($in == $choice) {
-            print "\n\tPlease enter a value within 1-9\n\n";  
-            redo INPUT;  
+            print "\n\tPlease enter a value within 1-9\n\n";
+            redo INPUT;
         }
 
         my $idx = $in - 1;
@@ -43,20 +43,20 @@ while ($board->any eq '.') {
     }
 
     print_board($board);
-    
+
     [
         [ 0, 1, 2 ], [ 3, 4, 5 ], [ 6, 7, 8 ],
         [ 0, 3, 6 ], [ 1, 4, 7 ], [ 2, 5, 8 ],
         [ 0, 4, 8 ], [ 2, 4, 6 ],
-    ]->map(sub {    
-            
+    ]->map(sub {
+
         my $row = $board->slice($_);
-                
+
         if (($row->all eq 'X') || ($row->all eq 'O')) {
             print("\n\tPlayer ($player) Wins\n");
             exit;
         }
-        
+
     });
 
     $player = $player eq 'X' ? 'O' : 'X';
@@ -71,11 +71,11 @@ tic_tac_toe.pl - Tic-Tac-Toe
 
 =head1 DESCRIPTION
 
-This is a Moose::Autobox port of a perl6 implementation 
+This is a Moose::Autobox port of a perl6 implementation
 of the classic Tic-Tac-Toe game.
 
 This uses a modified version of the one Rob Kinyon created
-L<http://www.perlmonks.org/index.pl?node_id=451302>. 
+L<http://www.perlmonks.org/index.pl?node_id=451302>.
 
 =head1 AUTHOR
 

@@ -10,18 +10,18 @@ use Moose::Autobox;
         Units::Bytes;
     use Moose::Role;
     use Moose::Autobox;
-    
-    sub bytes     { $_[0]                   }    
+
+    sub bytes     { $_[0]                   }
     sub kilobytes { $_[0] * 1024            }
     sub megabytes { $_[0] * 1024->kilobytes }
     sub gigabytes { $_[0] * 1024->megabytes }
     sub terabytes { $_[0] * 1024->gigabytes }
-    
+
     {
         no warnings 'once'; # << squelch the stupid "used only once, maybe typo" warnings
         *byte     = \&bytes;
-        *kilobyte = \&kilobytes;    
-        *megabyte = \&megabytes;    
+        *kilobyte = \&kilobytes;
+        *megabyte = \&megabytes;
         *gigabyte = \&gigabytes;
         *terabyte = \&terabytes;
     }
@@ -61,8 +61,8 @@ Stevan Little, E<lt>stevan@iinteractive.comE<gt>
 
 =head1 ACKNOLEDGEMENTS
 
-This code was ported from the version in the Pugs 
-examples/vmethods/ directory. See that for original author 
+This code was ported from the version in the Pugs
+examples/vmethods/ directory. See that for original author
 information.
 
 =cut
