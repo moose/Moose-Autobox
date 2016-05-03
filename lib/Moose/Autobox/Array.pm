@@ -2,6 +2,7 @@ package Moose::Autobox::Array;
 # ABSTRACT: the Array role
 use Moose::Role 'with';
 use Moose::Autobox;
+use List::MoreUtils ();
 
 use Syntax::Keyword::Junction::All ();
 use Syntax::Keyword::Junction::Any ();
