@@ -8,7 +8,7 @@ require Moose::Autobox;
 
 =pod
 
-This comes from one of the examples in the Pugs distro.
+This comes from one of the examples in the Pugs distribution.
 
 =cut
 

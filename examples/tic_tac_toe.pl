@@ -68,6 +68,9 @@ __END__
 
 =pod
 
+=for :header
+=for stopwords mkirank Tic Tac
+
 =head1 DESCRIPTION
 
 This is a Moose::Autobox port of a perl6 implementation
