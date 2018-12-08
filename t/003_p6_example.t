@@ -2,7 +2,7 @@ use strict;
 use warnings;
 
 use Test::More tests => 7;
-use Test::Exception;
+use Test::Fatal;
 
 require Moose::Autobox;
 
@@ -36,7 +36,8 @@ This comes from one of the examples in the Pugs distro.
 Moose::Autobox->mixin_additional_role(SCALAR => 'Units::Bytes');
 
 sub testing_bytes {
-    ::dies_ok { 10->bytes } '... cannot do the autoboxing lexically';
+    # this error message changed in 5.18 (blead commit 7156e69a (perl RT#105922)
+    like exception { 10->bytes }, qr/Can't locate object method "bytes" via package "10"|Can't call method "bytes" without a package or object reference/, '... cannot do the autoboxing lexically';
 }
 
 {
@@ -50,4 +51,4 @@ sub testing_bytes {
     testing_bytes;
 }
 
-dies_ok { 5->bytes } '... no longer got 5 bytes';
+like exception { 5->bytes }, qr/Can't locate object method "bytes" via package "5"|Can't call method "bytes" without a package or object reference/, '... no longer got 5 bytes';
