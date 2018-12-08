@@ -211,8 +211,6 @@ sub one {
 sub print { CORE::print @{$_[0]} }
 sub say   { CORE::print @{$_[0]}, "\n" }
 
-no Moose::Role;
-
 1;
 __END__
 
